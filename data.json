@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T12:47:50.221Z",
+  "generatedAt": "2026-08-26T13:13:06.550Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -38,12 +38,12 @@
     {
       "id": "2048621",
       "competition": "UCL",
-      "roundName": "1st qualifying round",
-      "roundType": "QUALIFYING_ROUND_1",
+      "roundName": "First qualifying round",
+      "roundType": "FIRST_QUALIFYING",
       "roundMode": "KNOCK_OUT",
       "matchdayNo": 1,
       "leg": 1,
-      "kickOff": "2026-07-07T19:00:00Z",
+      "kickOff": "2026-07-07T16:00:00Z",
       "date": "2026-07-07",
       "status": "FINISHED",
       "isHome": true,
@@ -53,26 +53,45 @@
       "awayCountry": "WAL",
       "homeScore": 2,
       "awayScore": 0,
-      "regular": null,
-      "aggregate": null,
+      "regular": {
+        "away": 0,
+        "home": 2
+      },
+      "aggregate": {
+        "away": 1,
+        "home": 4
+      },
       "outcome": "win",
       "opponent": "The New Saints",
       "opponentCountry": "WAL",
       "venueCity": "Baku",
-      "venueName": "Stadium",
-      "tieWinnerId": null,
+      "venueName": "Alinja Stadium",
+      "tieWinnerId": "2609356",
       "tieWinnerText": null,
-      "scorers": []
+      "scorers": [
+        {
+          "player": "Simić",
+          "minute": 66,
+          "forSabah": true,
+          "type": "SCORED"
+        },
+        {
+          "player": "Parris",
+          "minute": 84,
+          "forSabah": true,
+          "type": "SCORED"
+        }
+      ]
     },
     {
       "id": "2048635",
       "competition": "UCL",
-      "roundName": "1st qualifying round",
-      "roundType": "QUALIFYING_ROUND_1",
+      "roundName": "First qualifying round",
+      "roundType": "FIRST_QUALIFYING",
       "roundMode": "KNOCK_OUT",
       "matchdayNo": 2,
       "leg": 2,
-      "kickOff": "2026-07-14T19:00:00Z",
+      "kickOff": "2026-07-14T17:30:00Z",
       "date": "2026-07-14",
       "status": "FINISHED",
       "isHome": false,
@@ -82,90 +101,141 @@
       "awayCountry": "AZE",
       "homeScore": 1,
       "awayScore": 2,
-      "regular": null,
+      "regular": {
+        "away": 2,
+        "home": 1
+      },
       "aggregate": {
-        "home": 1,
-        "away": 4
+        "away": 4,
+        "home": 1
       },
       "outcome": "win",
       "opponent": "The New Saints",
       "opponentCountry": "WAL",
       "venueCity": "Oswestry",
-      "venueName": "Stadium",
+      "venueName": "Park Hall",
       "tieWinnerId": "2609356",
-      "tieWinnerText": "Sabah win 4-1 on aggregate",
-      "scorers": []
+      "tieWinnerText": null,
+      "scorers": [
+        {
+          "player": "Mickels",
+          "minute": 28,
+          "forSabah": true,
+          "type": "SCORED"
+        },
+        {
+          "player": "Dashdamirov",
+          "minute": 42,
+          "forSabah": true,
+          "type": "SCORED"
+        },
+        {
+          "player": "Lock",
+          "minute": 89,
+          "forSabah": false,
+          "type": "SCORED"
+        }
+      ]
     },
     {
       "id": "2048715",
       "competition": "UCL",
-      "roundName": "2nd qualifying round",
-      "roundType": "QUALIFYING_ROUND_2",
+      "roundName": "Second qualifying round",
+      "roundType": "SECOND_QUALIFYING",
       "roundMode": "KNOCK_OUT",
       "matchdayNo": 1,
       "leg": 1,
-      "kickOff": "2026-07-21T19:00:00Z",
+      "kickOff": "2026-07-21T16:00:00Z",
       "date": "2026-07-21",
       "status": "FINISHED",
       "isHome": true,
       "homeTeam": "Sabah",
-      "awayTeam": "KuPS",
+      "awayTeam": "KuPS Kuopio",
       "homeCountry": "AZE",
       "awayCountry": "FIN",
       "homeScore": 1,
       "awayScore": 0,
-      "regular": null,
-      "aggregate": null,
+      "regular": {
+        "away": 0,
+        "home": 1
+      },
+      "aggregate": {
+        "away": 0,
+        "home": 3
+      },
       "outcome": "win",
-      "opponent": "KuPS",
+      "opponent": "KuPS Kuopio",
       "opponentCountry": "FIN",
       "venueCity": "Baku",
-      "venueName": "Stadium",
-      "tieWinnerId": null,
+      "venueName": "Alinja Stadium",
+      "tieWinnerId": "2609356",
       "tieWinnerText": null,
-      "scorers": []
+      "scorers": [
+        {
+          "player": "Simić",
+          "minute": 45,
+          "forSabah": true,
+          "type": "SCORED"
+        }
+      ]
     },
     {
       "id": "2048729",
       "competition": "UCL",
-      "roundName": "2nd qualifying round",
-      "roundType": "QUALIFYING_ROUND_2",
+      "roundName": "Second qualifying round",
+      "roundType": "SECOND_QUALIFYING",
       "roundMode": "KNOCK_OUT",
       "matchdayNo": 2,
       "leg": 2,
-      "kickOff": "2026-07-28T19:00:00Z",
+      "kickOff": "2026-07-28T15:00:00Z",
       "date": "2026-07-28",
       "status": "FINISHED",
       "isHome": false,
-      "homeTeam": "KuPS",
+      "homeTeam": "KuPS Kuopio",
       "awayTeam": "Sabah",
       "homeCountry": "FIN",
       "awayCountry": "AZE",
       "homeScore": 0,
       "awayScore": 2,
-      "regular": null,
+      "regular": {
+        "away": 2,
+        "home": 0
+      },
       "aggregate": {
-        "home": 0,
-        "away": 3
+        "away": 3,
+        "home": 0
       },
       "outcome": "win",
-      "opponent": "KuPS",
+      "opponent": "KuPS Kuopio",
       "opponentCountry": "FIN",
       "venueCity": "Kuopio",
-      "venueName": "Stadium",
+      "venueName": "Kuopion Keskuskenttä",
       "tieWinnerId": "2609356",
-      "tieWinnerText": "Sabah win 3-0 on aggregate",
-      "scorers": []
+      "tieWinnerText": null,
+      "scorers": [
+        {
+          "player": "Simić",
+          "minute": 53,
+          "forSabah": true,
+          "type": "SCORED"
+        },
+        {
+          "player": "Mickels",
+          "minute": 70,
+          "forSabah": true,
+          "type": "SCORED"
+        }
+      ]
     },
     {
       "id": "2049102",
       "competition": "UCL",
-      "roundName": "3rd qualifying round",
-      "roundType": "QUALIFYING_ROUND_3",
+      "roundName": "Third qualifying round",
+      "roundType": "THIRD_QUALIFYING",
       "roundMode": "KNOCK_OUT",
       "matchdayNo": 1,
       "leg": 1,
-      "kickOff": "2026-08-05T19:00:00Z",
+      "kickOff": "2026-08-05T16:30:00Z",
       "date": "2026-08-05",
       "status": "FINISHED",
       "isHome": false,
@@ -175,26 +245,51 @@
       "awayCountry": "AZE",
       "homeScore": 2,
       "awayScore": 1,
-      "regular": null,
-      "aggregate": null,
+      "regular": {
+        "away": 1,
+        "home": 2
+      },
+      "aggregate": {
+        "away": 5,
+        "home": 2
+      },
       "outcome": "loss",
       "opponent": "Aarhus",
       "opponentCountry": "DEN",
       "venueCity": "Randers",
-      "venueName": "Stadium",
-      "tieWinnerId": null,
+      "venueName": "Randers Stadion",
+      "tieWinnerId": "2609356",
       "tieWinnerText": null,
-      "scorers": []
+      "scorers": [
+        {
+          "player": "Bogere",
+          "minute": 32,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "Bogere",
+          "minute": 63,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "Simić",
+          "minute": 67,
+          "forSabah": true,
+          "type": "SCORED"
+        }
+      ]
     },
     {
       "id": "2049112",
       "competition": "UCL",
-      "roundName": "3rd qualifying round",
-      "roundType": "QUALIFYING_ROUND_3",
+      "roundName": "Third qualifying round",
+      "roundType": "THIRD_QUALIFYING",
       "roundMode": "KNOCK_OUT",
       "matchdayNo": 2,
       "leg": 2,
-      "kickOff": "2026-08-11T19:00:00Z",
+      "kickOff": "2026-08-11T16:00:00Z",
       "date": "2026-08-11",
       "status": "FINISHED",
       "isHome": true,
@@ -204,19 +299,47 @@
       "awayCountry": "DEN",
       "homeScore": 4,
       "awayScore": 0,
-      "regular": null,
+      "regular": {
+        "away": 0,
+        "home": 4
+      },
       "aggregate": {
-        "home": 5,
-        "away": 2
+        "away": 2,
+        "home": 5
       },
       "outcome": "win",
       "opponent": "Aarhus",
       "opponentCountry": "DEN",
       "venueCity": "Baku",
-      "venueName": "Stadium",
+      "venueName": "Alinja Stadium",
       "tieWinnerId": "2609356",
-      "tieWinnerText": "Sabah win 5-2 on aggregate",
-      "scorers": []
+      "tieWinnerText": null,
+      "scorers": [
+        {
+          "player": "Simić",
+          "minute": 59,
+          "forSabah": true,
+          "type": "SCORED"
+        },
+        {
+          "player": "Solvet",
+          "minute": 67,
+          "forSabah": true,
+          "type": "SCORED"
+        },
+        {
+          "player": "Mickels",
+          "minute": 79,
+          "forSabah": true,
+          "type": "SCORED"
+        },
+        {
+          "player": "Severina",
+          "minute": 89,
+          "forSabah": true,
+          "type": "SCORED"
+        }
+      ]
     },
     {
       "id": "2049212",
@@ -236,10 +359,13 @@
       "awayCountry": "AZE",
       "homeScore": 2,
       "awayScore": 1,
-      "regular": null,
+      "regular": {
+        "away": 1,
+        "home": 2
+      },
       "aggregate": {
-        "home": 4,
-        "away": 6
+        "away": 6,
+        "home": 4
       },
       "outcome": "loss",
       "opponent": "H. Beer-Sheva",
@@ -277,7 +403,7 @@
       "roundMode": "KNOCK_OUT",
       "matchdayNo": 2,
       "leg": 2,
-      "kickOff": "2026-08-25T19:00:00Z",
+      "kickOff": "2026-08-25T16:45:00Z",
       "date": "2026-08-25",
       "status": "FINISHED",
       "isHome": true,
@@ -288,21 +414,64 @@
       "homeScore": 5,
       "awayScore": 2,
       "regular": {
-        "home": 3,
-        "away": 2
+        "away": 2,
+        "home": 3
       },
       "aggregate": {
-        "home": 6,
-        "away": 4
+        "away": 4,
+        "home": 6
       },
       "outcome": "win",
       "opponent": "H. Beer-Sheva",
       "opponentCountry": "ISR",
       "venueCity": "Baku",
-      "venueName": "Stadium",
+      "venueName": "Tofiq Bahramov Republican Stadium",
       "tieWinnerId": "2609356",
       "tieWinnerText": "Sabah win after extra time",
-      "scorers": []
+      "scorers": [
+        {
+          "player": "Zlatanović",
+          "minute": 10,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "Nwachukwu",
+          "minute": 38,
+          "forSabah": true,
+          "type": "SCORED"
+        },
+        {
+          "player": "Mizrahi",
+          "minute": 61,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "Rakhmonaliev",
+          "minute": 74,
+          "forSabah": true,
+          "type": "SCORED"
+        },
+        {
+          "player": "Mutallimov",
+          "minute": 90,
+          "forSabah": true,
+          "type": "SCORED"
+        },
+        {
+          "player": "Mbina",
+          "minute": 101,
+          "forSabah": true,
+          "type": "SCORED"
+        },
+        {
+          "player": "Mickels",
+          "minute": 115,
+          "forSabah": true,
+          "type": "SCORED"
+        }
+      ]
     }
   ],
   "lastResult": {
@@ -313,7 +482,7 @@
     "roundMode": "KNOCK_OUT",
     "matchdayNo": 2,
     "leg": 2,
-    "kickOff": "2026-08-25T19:00:00Z",
+    "kickOff": "2026-08-25T16:45:00Z",
     "date": "2026-08-25",
     "status": "FINISHED",
     "isHome": true,
@@ -324,21 +493,64 @@
     "homeScore": 5,
     "awayScore": 2,
     "regular": {
-      "home": 3,
-      "away": 2
+      "away": 2,
+      "home": 3
     },
     "aggregate": {
-      "home": 6,
-      "away": 4
+      "away": 4,
+      "home": 6
     },
     "outcome": "win",
     "opponent": "H. Beer-Sheva",
     "opponentCountry": "ISR",
     "venueCity": "Baku",
-    "venueName": "Stadium",
+    "venueName": "Tofiq Bahramov Republican Stadium",
     "tieWinnerId": "2609356",
     "tieWinnerText": "Sabah win after extra time",
-    "scorers": []
+    "scorers": [
+      {
+        "player": "Zlatanović",
+        "minute": 10,
+        "forSabah": false,
+        "type": "SCORED"
+      },
+      {
+        "player": "Nwachukwu",
+        "minute": 38,
+        "forSabah": true,
+        "type": "SCORED"
+      },
+      {
+        "player": "Mizrahi",
+        "minute": 61,
+        "forSabah": false,
+        "type": "SCORED"
+      },
+      {
+        "player": "Rakhmonaliev",
+        "minute": 74,
+        "forSabah": true,
+        "type": "SCORED"
+      },
+      {
+        "player": "Mutallimov",
+        "minute": 90,
+        "forSabah": true,
+        "type": "SCORED"
+      },
+      {
+        "player": "Mbina",
+        "minute": 101,
+        "forSabah": true,
+        "type": "SCORED"
+      },
+      {
+        "player": "Mickels",
+        "minute": 115,
+        "forSabah": true,
+        "type": "SCORED"
+      }
+    ]
   },
   "nextMatch": null,
   "coefficient": {

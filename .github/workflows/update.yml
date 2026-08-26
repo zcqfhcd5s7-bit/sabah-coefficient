@@ -1,0 +1,46 @@
+name: Update Sabah coefficient
+
+# Refreshes data.json from UEFA's official match feed so the published page
+# updates itself after every match — no manual editing required.
+
+on:
+  schedule:
+    # Every hour, on the hour (UTC). European matches finish ~20:00–23:00 UTC,
+    # so the page is current within an hour of any final whistle.
+    - cron: '0 * * * *'
+  workflow_dispatch:        # lets you run it on demand from the Actions tab
+  push:
+    branches: [main]
+    paths: ['scripts/update.mjs', '.github/workflows/update.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-coefficient
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch official UEFA data and rebuild data.json
+        run: node scripts/update.mjs
+
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet -- data.json; then
+            echo "No change in UEFA data — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git commit -m "Update Sabah coefficient from UEFA ($(date -u '+%Y-%m-%d %H:%M UTC'))"
+          git push

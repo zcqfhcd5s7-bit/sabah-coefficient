@@ -3,22 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sabah FK — UEFA Club Coefficient Scenarios 2026/27</title>
+<title>Sabah FK — UEFA Club Coefficient Tracker 2026/27</title>
 <style>
   :root{
     --bg:#0b1220; --card:#121c2e; --card2:#0f1828; --line:#233350;
     --txt:#e8eefb; --muted:#8ea3c4; --accent:#3fb6ff; --gold:#f5c542;
-    --green:#38d189; --red:#ff6b6b; --purple:#b18cff;
+    --green:#38d189; --red:#ff6b6b;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);color:var(--txt);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.5}
   .wrap{max-width:1100px;margin:0 auto;padding:28px 20px 60px}
-  header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;margin-bottom:8px}
+  header{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
   h1{font-size:26px;font-weight:800}
   h1 span{color:var(--accent)}
-  .sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+  .sub{color:var(--muted);font-size:14px;margin:6px 0 22px}
+  .live{display:inline-flex;align-items:center;gap:7px;background:#152b22;color:var(--green);
+        border:1px solid #2a5741;border-radius:20px;padding:5px 13px;font-size:12px;font-weight:700}
+  .live i{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;
+          animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   .grid{display:grid;gap:14px}
-  .kpis{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));margin-bottom:26px}
+  .kpis{grid-template-columns:repeat(auto-fit,minmax(165px,1fr));margin-bottom:26px}
   .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
   .kpi .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
   .kpi .val{font-size:28px;font-weight:800;margin-top:4px}
@@ -28,53 +33,48 @@
   .h2sub{color:var(--muted);font-size:13.5px;margin-bottom:14px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
 
-  /* season bars */
   .seasons{display:flex;gap:10px;align-items:flex-end;height:150px;padding:10px 6px 0}
   .season{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
   .bar{width:70%;max-width:64px;border-radius:6px 6px 0 0;background:linear-gradient(180deg,var(--accent),#1c6ea8)}
   .bar.zero{height:4px;background:var(--line)}
   .bar.new{background:linear-gradient(180deg,var(--gold),#a8842a)}
   .season .pts{font-weight:700;font-size:14px}
-  .season .yr{font-size:11.5px;color:var(--muted)}
-  .season.dropped{opacity:.45}
+  .season .yr{font-size:11.5px;color:var(--muted);text-align:center}
   .legend{display:flex;gap:16px;font-size:12px;color:var(--muted);margin-top:10px;flex-wrap:wrap}
   .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
 
-  /* results */
-  .matches{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .matches{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
   .match{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
   .match .rnd{font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;font-weight:700}
   .match .teams{font-size:15px;font-weight:700;margin:5px 0 2px}
-  .match .score{color:var(--green);font-weight:800}
+  .match .score{font-weight:800}
+  .match .score.w{color:var(--green)} .match .score.l{color:var(--red)} .match .score.d{color:var(--muted)}
   .match .meta{font-size:12px;color:var(--muted)}
   .match.next{border-color:var(--gold)}
-  .match.next .rnd{color:var(--gold)}
-  .match.next .score{color:var(--gold)}
+  .match.next .rnd,.match.next .score{color:var(--gold)}
 
-  /* scenario cards */
   .scenarios{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
   .scen{border-radius:14px;border:1px solid var(--line);padding:18px;background:var(--card)}
-  .scen .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;border-radius:20px;padding:3px 10px;margin-bottom:10px}
+  .scen .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+             border-radius:20px;padding:3px 10px;margin-bottom:10px}
   .scen h3{font-size:16px;margin-bottom:6px}
   .scen .path{font-size:12.5px;color:var(--muted);margin-bottom:12px;min-height:36px}
   .scen .row{display:flex;justify-content:space-between;font-size:13.5px;padding:5px 0;border-top:1px dashed var(--line)}
   .scen .row b{font-variant-numeric:tabular-nums}
   .scen .big{font-size:22px;font-weight:800;margin-top:10px}
-  .s1 .tag{background:#3a2030;color:var(--red)} .s1 .big{color:var(--red)}
+  .s1 .tag{background:#3a2030;color:var(--red)}    .s1 .big{color:var(--red)}
   .s2 .tag{background:#20303a;color:var(--accent)} .s2 .big{color:var(--accent)}
-  .s3 .tag{background:#203a2e;color:var(--green)} .s3 .big{color:var(--green)}
-  .s4 .tag{background:#3a3320;color:var(--gold)} .s4 .big{color:var(--gold)}
+  .s3 .tag{background:#203a2e;color:var(--green)}  .s3 .big{color:var(--green)}
+  .s4 .tag{background:#3a3320;color:var(--gold)}   .s4 .big{color:var(--gold)}
 
-  /* tree */
   .tree{font-size:13.5px}
   .tree .lvl{display:flex;gap:10px;margin-bottom:8px;flex-wrap:wrap;align-items:center}
   .node{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:8px 13px}
-  .node.win{border-color:var(--green)} .node.lose{border-color:var(--red)}
-  .arrow{color:var(--muted)}
+  .node.done{opacity:.55}
   .pill{font-size:11px;border-radius:20px;padding:2px 9px;font-weight:700}
   .pill.g{background:#203a2e;color:var(--green)} .pill.r{background:#3a2030;color:var(--red)}
+  .arrow{color:var(--muted)}
 
-  /* calculator */
   .calc{display:grid;grid-template-columns:1fr 1fr;gap:22px}
   @media(max-width:760px){.calc{grid-template-columns:1fr}}
   .ctl{margin-bottom:16px}
@@ -84,231 +84,320 @@
   input[type=range]{accent-color:var(--accent)}
   .rangeval{float:right;color:var(--txt);font-weight:700}
   .ko{display:flex;gap:10px;flex-wrap:wrap}
-  .ko label{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--txt);background:var(--card2);border:1px solid var(--line);border-radius:8px;padding:7px 11px;cursor:pointer;margin:0}
+  .ko label{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--txt);background:var(--card2);
+            border:1px solid var(--line);border-radius:8px;padding:7px 11px;cursor:pointer;margin:0}
   .result{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:20px}
   .result .line{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed var(--line);font-size:14px}
   .result .line b{font-variant-numeric:tabular-nums}
   .result .total{font-size:30px;font-weight:800;color:var(--gold);margin-top:12px}
   .result .delta{font-size:14px;color:var(--green);font-weight:700}
-  .barwrap{margin-top:16px}
-  .cmp{position:relative;height:12px;background:var(--line);border-radius:8px;margin:26px 4px 34px}
+  .cmp{position:relative;height:12px;background:var(--line);border-radius:8px;margin:32px 4px 38px}
   .cmp .fill{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:8px}
   .mark{position:absolute;top:-20px;transform:translateX(-50%);font-size:10.5px;color:var(--muted);white-space:nowrap}
   .mark::after{content:"";position:absolute;left:50%;top:16px;width:2px;height:20px;background:var(--muted);opacity:.6}
   .mark.below{top:auto;bottom:-22px}
   .mark.below::after{top:auto;bottom:14px}
 
-  .foot{margin-top:36px;font-size:12px;color:var(--muted)}
-  .foot a{color:var(--accent);text-decoration:none}
   ul.rules{font-size:13.5px;color:var(--muted);padding-left:18px;display:grid;gap:6px}
   ul.rules b{color:var(--txt)}
-  .badge{background:#203a2e;color:var(--green);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:700}
+  .foot{margin-top:36px;font-size:12px;color:var(--muted)}
+  .foot a{color:var(--accent);text-decoration:none}
+  .err{background:#3a2030;border:1px solid var(--red);color:#ffd9d9;border-radius:12px;padding:14px 16px;font-size:14px}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header>
-    <h1>⚽ Sabah FK — Club Coefficient <span>Scenarios 2026/27</span></h1>
-    <span class="badge">✓ Europa League league phase secured — coefficient rises from 6.000 to at least 9.000</span>
+    <h1>⚽ Sabah FK — Club Coefficient <span>Tracker 2026/27</span></h1>
+    <span class="live"><i></i><span id="liveBadge">Loading official UEFA data…</span></span>
   </header>
-  <div class="sub">Season 2026/27 · UEFA Champions League Play-off (Champions Path) · updated 12 August 2026, after the 5–2 agg. win over AGF Aarhus</div>
+  <div class="sub" id="subline">Auto-updating from UEFA's official match feed.</div>
 
+  <div id="app"></div>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script>
+/* ---- Annex D constants (UEFA Champions League Regulations 2026/27) ---- */
+const KO_BONUS     = {UCL:1.5, UEL:1.0, UECL:0.5};
+const MIN_PTS      = {UCL:0,   UEL:3.0, UECL:2.5};
+const GAMES        = {UCL:8,   UEL:8,   UECL:6};
+const COMP_NAME    = {UCL:'Champions League', UEL:'Europa League', UECL:'Conference League'};
+function posBonus(code, r){
+  if(code==='UCL') return r>=25 ? 6.0 : 12.0 - 0.25*(r-1);
+  if(code==='UEL') return r>=25 ? 0.0 :  6.0 - 0.25*(r-1);
+  if(r>=25) return 0.0;
+  if(r<=9)  return 4.0 - 0.25*(r-1);
+  return 2.0 - 0.125*(r-9);
+}
+const f3  = n => n.toFixed(3);
+const esc = s => String(s??'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const FLAG = {AZE:'🇦🇿',WAL:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',FIN:'🇫🇮',DEN:'🇩🇰',ISR:'🇮🇱',SRB:'🇷🇸',BUL:'🇧🇬',MDA:'🇲🇩',SVN:'🇸🇮',
+             POL:'🇵🇱',ENG:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',ESP:'🇪🇸',GER:'🇩🇪',ITA:'🇮🇹',FRA:'🇫🇷',POR:'🇵🇹',NED:'🇳🇱',BEL:'🇧🇪',
+             SCO:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',TUR:'🇹🇷',GRE:'🇬🇷',NOR:'🇳🇴',SWE:'🇸🇪',CZE:'🇨🇿',AUT:'🇦🇹',SUI:'🇨🇭',CRO:'🇭🇷',
+             UKR:'🇺🇦',ROU:'🇷🇴',KAZ:'🇰🇿',CYP:'🇨🇾',HUN:'🇭🇺',SVK:'🇸🇰',ARM:'🇦🇲',LTU:'🇱🇹',NIR:'🏴󠁧󠁢󠁮󠁩󠁲󠁿'};
+const flag = cc => FLAG[cc] || '';
+
+let DATA = null;
+
+/* ------------------------------- rendering ------------------------------ */
+
+function fmtDate(iso){
+  if(!iso) return '';
+  const d = new Date(iso);
+  return d.toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+}
+
+function matchCard(m, isNext){
+  const played = m.status === 'FINISHED';
+  const cls = !played ? '' : m.outcome === 'win' ? 'w' : m.outcome === 'loss' ? 'l' : 'd';
+  const score = played ? `${m.homeScore}–${m.awayScore}` : 'vs';
+  const agg = m.aggregate
+    ? `Agg. ${m.aggregate.home}–${m.aggregate.away}${m.tieWinnerText ? ' · ' + esc(m.tieWinnerText) : ''}`
+    : (m.venueCity ? esc(m.venueCity) : '');
+  const legTxt = m.leg ? ` · leg ${m.leg}` : '';
+  const goals = (m.scorers||[]).filter(s=>s.forSabah).map(s=>`${esc(s.player)} ${s.minute}'`).join(', ');
+  return `<div class="match${isNext?' next':''}">
+    <div class="rnd">${esc(m.competition)} ${esc(m.roundName)}${legTxt} · ${fmtDate(m.kickOff)}</div>
+    <div class="teams">${esc(m.homeTeam)} ${flag(m.homeCountry)} <span class="score ${cls}">${score}</span> ${esc(m.awayTeam)} ${flag(m.awayCountry)}</div>
+    <div class="meta">${agg || (isNext ? 'Upcoming' : '')}${goals ? ' · ⚽ ' + goals : ''}</div>
+  </div>`;
+}
+
+function scenarioCards(c){
+  const code = c.competition, g = GAMES[code], min = MIN_PTS[code], base = c.carried;
+  const bonusFloor = c.reachedLeaguePhase ? posBonus(code,36) : 0;
+  const mk = (klass,tag,title,path,rows,total,extra='') => `
+    <div class="scen ${klass}"><span class="tag">${tag}</span><h3>${title}</h3>
+      <div class="path">${path}</div>
+      ${rows.map(r=>`<div class="row"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('')}
+      <div class="big">→ ${total}${extra}</div></div>`;
+
+  if(!c.reachedLeaguePhase){
+    return mk('s1','Current','Qualifying still open',
+      'Points depend entirely on where the run ends.',
+      [['Season points so far', f3(c.seasonPointsSoFar)],['Carried seasons', f3(base)]],
+      f3(c.coefficientNow));
+  }
+
+  const wins = c.leaguePhase.wins, draws = c.leaguePhase.draws, pts = c.leaguePhase.matchPoints;
+  const rem  = c.leaguePhase.remaining;
+
+  // Floor — no more points, last place
+  const floorPts = Math.max(pts, min) + bonusFloor;
+  // Mid — win a third of the remaining games, mid-table-ish
+  const midW = wins + Math.floor(rem/3), midD = draws + Math.floor(rem/4);
+  const midPts = Math.max(2*midW + midD, min), midBonus = posBonus(code, 22);
+  // Strong
+  const strW = wins + Math.ceil(rem/2), strD = draws + Math.floor(rem/6);
+  const strPts = Math.max(2*strW + strD, min), strBonus = posBonus(code, 12);
+  // Knockout
+  const koPts = strPts + posBonus(code,8) + KO_BONUS[code];
+
+  return [
+    mk('s1','Floor · guaranteed', `No more points in the ${COMP_NAME[code]}`,
+      `Lose every remaining game and finish 36th — the bonus still applies.`,
+      [['Match points', f3(Math.max(pts,min))],['Position bonus (25th–36th)', f3(bonusFloor)],
+       ['Season total', f3(floorPts)]],
+      f3(base+floorPts), ` <small style="font-size:12px;color:var(--muted)">(×${((base+floorPts)/base).toFixed(1)})</small>`),
+    mk('s2','Modest', 'A few results go right',
+      `${midW} win${midW===1?'':'s'} + ${midD} draw${midD===1?'':'s'} across the ${g} games, ~22nd place.`,
+      [['Match points', f3(midPts)],['Position bonus ≈ 22nd', f3(midBonus)],
+       ['Season total', f3(midPts+midBonus)]],
+      f3(base+midPts+midBonus)),
+    mk('s3','Strong', 'Genuine mid-table finish',
+      `${strW} win${strW===1?'':'s'} + ${strD} draw${strD===1?'':'s'}, ~12th place.`,
+      [['Match points', f3(strPts)],['Position bonus ≈ 12th', f3(strBonus)],
+       ['Season total', f3(strPts+strBonus)]],
+      f3(base+strPts+strBonus)),
+    mk('s4','Dream', 'Top-8 and into the knockouts',
+      `Direct round-of-16 place plus one knockout round (+${KO_BONUS[code]} each).`,
+      [['Match points', f3(strPts)],['Position bonus ≈ 8th', f3(posBonus(code,8))],
+       ['Knockout bonus', f3(KO_BONUS[code])]],
+      f3(base+koPts)),
+  ].join('');
+}
+
+function render(d){
+  const c = d.coefficient, code = c.competition;
+  const played = d.matches.filter(m=>m.status==='FINISHED');
+  const inLP = c.reachedLeaguePhase;
+
+  document.getElementById('liveBadge').textContent =
+    'Live from UEFA · updated ' + new Date(d.generatedAt).toLocaleString('en-GB',
+      {day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+
+  const stage = inLP
+    ? (c.leaguePhase.played > 0
+        ? `${COMP_NAME[code]} league phase · matchday ${c.leaguePhase.played}/${c.leaguePhase.total}`
+        : `${COMP_NAME[code]} league phase secured`)
+    : (c.eliminatedAt ? 'Eliminated in qualifying' : 'Qualifying');
+  document.getElementById('subline').textContent =
+    `Season 2026/27 · ${stage} · every figure below is rebuilt from UEFA's official match feed after each game.`;
+
+  const carriedBars = d.carriedSeasons.map(s=>`
+    <div class="season"><div class="pts">${s.points.toFixed(1)}</div>
+      <div class="bar ${s.points===0?'zero':''}" style="height:${s.points===0?'':(s.points/8*100)+'%'}"></div>
+      <div class="yr">${s.season}<br>${esc(s.note)}</div></div>`).join('');
+
+  const liveSeason = c.seasonPointsFloor;
+  const app = `
   <div class="grid kpis">
-    <div class="kpi blue"><div class="lbl">Current coefficient</div><div class="val">6.000</div><div class="note">≈ #212 in Europe · #3 in Azerbaijan</div></div>
-    <div class="kpi"><div class="lbl">Current round</div><div class="val" style="font-size:19px">UCL Play-off</div><div class="note">vs Hapoel Be'er Sheva 🇮🇱 · 18–19 &amp; 25–26 Aug</div></div>
-    <div class="kpi green"><div class="lbl">Guaranteed minimum 2027/28</div><div class="val">9.000</div><div class="note">even if Sabah loses everything from here</div></div>
-    <div class="kpi gold"><div class="lbl">If UCL league phase reached</div><div class="val">≥ 12.000</div><div class="note">coefficient at least doubles</div></div>
+    <div class="kpi blue"><div class="lbl">Coefficient banked now</div><div class="val">${f3(c.coefficientNow)}</div>
+      <div class="note">${f3(c.carried)} carried + ${f3(c.seasonPointsSoFar)} this season</div></div>
+    <div class="kpi"><div class="lbl">Current stage</div>
+      <div class="val" style="font-size:19px">${esc(stage.split(' · ')[0])}</div>
+      <div class="note">${d.nextMatch ? 'Next: ' + esc(d.nextMatch.opponent) + ' ' + flag(d.nextMatch.opponentCountry) + ' · ' + fmtDate(d.nextMatch.kickOff) : 'Draw pending'}</div></div>
+    <div class="kpi green"><div class="lbl">Guaranteed for 2027/28</div><div class="val">${f3(c.coefficientFloor)}</div>
+      <div class="note">even with nothing more from here</div></div>
+    <div class="kpi gold"><div class="lbl">Realistic ceiling</div><div class="val">${inLP?'18+':'—'}</div>
+      <div class="note">${inLP?'with a knockout run':'depends on the run'}</div></div>
   </div>
 
-  <h2>1 · The coefficient today — and why every point now is pure gain</h2>
-  <div class="h2sub">5-season window. For next season's ranking (2027/28 seedings) the window shifts to 2022/23–2026/27: a 0.000 season drops out, so nothing is lost and everything earned this season is added on top of 6.000.</div>
+  <h2>1 · Where the coefficient comes from</h2>
+  <div class="h2sub">The 2027/28 seeding coefficient uses seasons 2022/23–2026/27. Four are already locked; only this season is still moving.</div>
   <div class="card">
-    <div class="seasons">
-      <div class="season dropped"><div class="pts">0.0</div><div class="bar zero"></div><div class="yr">21/22<br>drops out</div></div>
-      <div class="season"><div class="pts">0.0</div><div class="bar zero"></div><div class="yr">22/23</div></div>
-      <div class="season"><div class="pts">2.0</div><div class="bar" style="height:28%"></div><div class="yr">23/24<br>UECL Q3 exit</div></div>
-      <div class="season"><div class="pts">2.0</div><div class="bar" style="height:28%"></div><div class="yr">24/25<br>UECL Q3 exit</div></div>
-      <div class="season"><div class="pts">2.0</div><div class="bar" style="height:28%"></div><div class="yr">25/26<br>UECL Q3 exit (Levski)</div></div>
-      <div class="season"><div class="pts">?</div><div class="bar new" style="height:60%"></div><div class="yr">26/27<br>this season</div></div>
+    <div class="seasons">${carriedBars}
+      <div class="season"><div class="pts">${f3(liveSeason)}</div>
+        <div class="bar new" style="height:${Math.min(100, liveSeason/8*100)}%"></div>
+        <div class="yr">2026/27<br>live (min.)</div></div>
     </div>
     <div class="legend">
-      <span><span class="dot" style="background:var(--accent)"></span>Counted seasons (total 6.000)</span>
-      <span><span class="dot" style="background:var(--gold)"></span>2026/27 — decided by where the run ends</span>
-      <span><span class="dot" style="background:var(--line)"></span>Azerbaijan rivals: Qarabağ 33.750 · Zira 7.000 · Neftçi 5.500</span>
+      <span><span class="dot" style="background:var(--accent)"></span>Locked seasons — total ${f3(c.carried)}</span>
+      <span><span class="dot" style="background:var(--gold)"></span>2026/27 — guaranteed minimum so far</span>
     </div>
   </div>
 
-  <h2>2 · The campaign so far</h2>
-  <div class="h2sub">Champions Path — three rounds cleared, capped by a 4–0 comeback against AGF. Note: qualifying wins add points to Azerbaijan's <i>country</i> coefficient (+0.250 each), but not to Sabah's <i>club</i> coefficient — the club total depends only on where the run ends.</div>
+  <h2>2 · The campaign, straight from UEFA</h2>
+  <div class="h2sub">${played.length} match${played.length===1?'':'es'} played. Qualifying wins feed Azerbaijan's <i>country</i> coefficient, not Sabah's <i>club</i> coefficient — for the club, only the stage reached counts.</div>
   <div class="matches">
-    <div class="match"><div class="rnd">UCL Q1 · 7 &amp; 14 Jul</div><div class="teams">Sabah <span class="score">4–1</span> TNS 🏴󠁧󠁢󠁷󠁬󠁳󠁿 (agg.)</div><div class="meta">2–0 home · 2–1 away → through</div></div>
-    <div class="match"><div class="rnd">UCL Q2 · 21 &amp; 28 Jul</div><div class="teams">Sabah <span class="score">3–0</span> KuPS 🇫🇮 (agg.)</div><div class="meta">1–0 home · 2–0 away → through</div></div>
-    <div class="match"><div class="rnd">UCL Q3 · 1st leg · 5 Aug</div><div class="teams">AGF Aarhus 🇩🇰 <span class="score" style="color:var(--red)">2–1</span> Sabah</div><div class="meta">Randers · Simić scored for Sabah</div></div>
-    <div class="match"><div class="rnd">UCL Q3 · 2nd leg · 11 Aug</div><div class="teams">Sabah <span class="score">4–0</span> AGF Aarhus</div><div class="meta">Baku · Agg. 5–2 → through to Play-off!</div></div>
-    <div class="match next"><div class="rnd">UCL Play-off · next</div><div class="teams">Sabah <span class="score">vs</span> Hapoel Be'er Sheva 🇮🇱</div><div class="meta">18–19 Aug &amp; 25–26 Aug · Hapoel beat Crvena Zvezda 3–2 agg.</div></div>
+    ${d.matches.map(m => matchCard(m, m === d.nextMatch)).join('')}
   </div>
 
-  <h2>3 · Where can the run end? Only two doors left</h2>
-  <div class="h2sub">By beating AGF in Q3, Sabah escaped the Conference League branch entirely. A UCL play-off loser drops straight into the Europa League league phase — so a league phase (UCL or UEL) is now certain.</div>
+  <h2>3 · What is already locked in</h2>
+  <div class="h2sub">${esc(c.note)}</div>
   <div class="card tree">
-    <div class="lvl"><div class="node" style="opacity:.55">UCL Q3 vs AGF Aarhus</div><span class="pill g">✓ WON 5–2 agg.</span></div>
-    <div class="lvl"><div class="node">UCL Play-off vs Hapoel Be'er Sheva</div><span class="arrow">➜ win</span><span class="pill g">UCL League Phase (8 games, ≥ 6.0 pts)</span> <span class="arrow">/ lose ➜</span><span class="pill r">UEL League Phase (8 games, ≥ 3.0 pts)</span></div>
-    <div class="lvl" style="margin-top:6px;color:var(--muted)">Worst case = Europa League league phase → guaranteed minimum <b style="color:var(--txt)">3.0 pts</b> → coefficient <b style="color:var(--green)">9.000</b>. The old UECL floor (8.500) is history.</div>
+    ${inLP ? `
+      <div class="lvl"><div class="node done">Qualifying — 4 rounds</div><span class="pill g">✓ cleared</span></div>
+      <div class="lvl"><div class="node">${COMP_NAME[code]} league phase · ${c.leaguePhase.total} games</div>
+        <span class="pill g">position bonus ≥ ${f3(posBonus(code,36))} guaranteed</span></div>
+      <div class="lvl" style="margin-top:6px;color:var(--muted)">
+        Even finishing last, the season is worth at least <b style="color:var(--txt)">${f3(c.seasonPointsFloor)}</b> →
+        coefficient <b style="color:var(--green)">${f3(c.coefficientFloor)}</b>.</div>`
+    : `<div class="lvl" style="color:var(--muted)">Season floor so far: <b style="color:var(--green)">${f3(c.coefficientFloor)}</b></div>`}
   </div>
 
-  <h2>4 · Four scenarios for next season's coefficient</h2>
-  <div class="h2sub">Coefficient for 2027/28 = 6.000 (kept seasons) + points earned in 2026/27. "Realistic" assumes a modest league-phase return for a club of Sabah's level.</div>
-  <div class="grid scenarios">
-    <div class="scen s1">
-      <span class="tag">Scenario D · Floor</span>
-      <h3>Lose play-off, winless in UEL</h3>
-      <div class="path">Lose to Hapoel → UEL league phase, then 0 points in 8 games</div>
-      <div class="row"><span>Guaranteed minimum</span><b>3.000</b></div>
-      <div class="row"><span>Position bonus (25th–36th)</span><b>0.000</b></div>
-      <div class="row"><span>Season total</span><b>3.000</b></div>
-      <div class="big">→ 9.000 <small style="font-size:12px;color:var(--muted)">(+50%)</small></div>
-    </div>
-    <div class="scen s2">
-      <span class="tag">Scenario C · Modest</span>
-      <h3>UEL league phase, modest run</h3>
-      <div class="path">Lose play-off → 2 wins + 2 draws in 8 games, ~28th place</div>
-      <div class="row"><span>Match points (2W, 2D)</span><b>6.000</b></div>
-      <div class="row"><span>Position bonus (25th+)</span><b>0.000</b></div>
-      <div class="row"><span>Season total</span><b>6.000</b></div>
-      <div class="big">→ 12.000 <small style="font-size:12px;color:var(--muted)">(×2)</small></div>
-    </div>
-    <div class="scen s3">
-      <span class="tag">Scenario B · Strong</span>
-      <h3>UEL league phase, strong run</h3>
-      <div class="path">Lose play-off → 3 wins + 2 draws in 8 games, ~20th place</div>
-      <div class="row"><span>Match points (3W, 2D)</span><b>8.000</b></div>
-      <div class="row"><span>Position bonus ≈ 20th</span><b>1.250</b></div>
-      <div class="row"><span>Season total</span><b>9.250</b></div>
-      <div class="big">→ 15.250</div>
-    </div>
-    <div class="scen s4">
-      <span class="tag">Scenario A · Dream</span>
-      <h3>Champions League league phase</h3>
-      <div class="path">Beat Hapoel Be'er Sheva → even finishing last (36th) pays 6.0 bonus pts</div>
-      <div class="row"><span>Position bonus (25th–36th)</span><b>6.000</b></div>
-      <div class="row"><span>+ e.g. 1 win, 1 draw</span><b>3.000</b></div>
-      <div class="row"><span>Season total</span><b>6.0 – 9.0+</b></div>
-      <div class="big">→ 12.000 – 15.000+</div>
-    </div>
-  </div>
+  <h2>4 · Scenarios for next season's coefficient</h2>
+  <div class="h2sub">Coefficient 2027/28 = ${f3(c.carried)} carried + whatever 2026/27 produces. These recompute automatically as results come in.</div>
+  <div class="grid scenarios">${scenarioCards(c)}</div>
 
-  <h2>5 · Interactive calculator — build your own scenario</h2>
-  <div class="h2sub">Pick where Sabah lands and how the league phase goes; the next-season coefficient updates live.</div>
+  <h2>5 · Build your own scenario</h2>
+  <div class="h2sub">Sliders start from the results already recorded.</div>
   <div class="card calc">
     <div>
-      <div class="ctl">
-        <label>Where does Sabah land?</label>
+      <div class="ctl"><label>Competition</label>
         <select id="comp">
-          <option value="uel">Europa League league phase (8 games) — if play-off is lost</option>
-          <option value="ucl">Champions League league phase (8 games) — if Hapoel is beaten</option>
-        </select>
-      </div>
-      <div class="ctl"><label>Wins in league phase <span class="rangeval" id="winsV">1</span></label><input type="range" id="wins" min="0" max="6" value="1"></div>
-      <div class="ctl"><label>Draws in league phase <span class="rangeval" id="drawsV">1</span></label><input type="range" id="draws" min="0" max="5" value="1"></div>
-      <div class="ctl"><label>Final league-phase position <span class="rangeval" id="rankV">28</span></label><input type="range" id="rank" min="1" max="36" value="28"></div>
-      <div class="ctl">
-        <label>Knockout rounds reached (bonus per round)</label>
+          ${['UCL','UEL','UECL'].map(k=>`<option value="${k}"${k===code?' selected':''}>${COMP_NAME[k]} league phase (${GAMES[k]} games)</option>`).join('')}
+        </select></div>
+      <div class="ctl"><label>Wins <span class="rangeval" id="winsV"></span></label>
+        <input type="range" id="wins" min="0" max="${GAMES[code]}" value="${c.leaguePhase.wins}"></div>
+      <div class="ctl"><label>Draws <span class="rangeval" id="drawsV"></span></label>
+        <input type="range" id="draws" min="0" max="${GAMES[code]}" value="${c.leaguePhase.draws}"></div>
+      <div class="ctl"><label>Final league-phase position <span class="rangeval" id="rankV"></span></label>
+        <input type="range" id="rank" min="1" max="36" value="28"></div>
+      <div class="ctl"><label>Knockout rounds reached</label>
         <div class="ko">
           <label><input type="checkbox" id="r16"> Round of 16</label>
           <label><input type="checkbox" id="qf"> Quarter-final</label>
           <label><input type="checkbox" id="sf"> Semi-final</label>
           <label><input type="checkbox" id="fin"> Final</label>
-        </div>
-      </div>
+        </div></div>
     </div>
     <div class="result">
-      <div class="line"><span>Match points (2/win, 1/draw)</span><b id="oMatch">3.0</b></div>
+      <div class="line"><span>Match points (2 / win, 1 / draw)</span><b id="oMatch">—</b></div>
       <div class="line"><span>Guaranteed minimum applied</span><b id="oMin">—</b></div>
-      <div class="line"><span>Position bonus</span><b id="oPos">0.000</b></div>
-      <div class="line"><span>Knockout round bonus</span><b id="oKo">0.000</b></div>
-      <div class="line"><span><b>Season 2026/27 points</b></span><b id="oSeason">3.000</b></div>
-      <div class="line"><span>+ Carried seasons (22/23–25/26)</span><b>6.000</b></div>
-      <div class="total" id="oTotal">9.000</div>
-      <div class="delta" id="oDelta">+3.000 vs today (6.000)</div>
-      <div class="barwrap">
-        <div class="cmp" id="cmpBar">
-          <div class="fill" id="cmpFill" style="width:30%"></div>
-          <div class="mark" style="left:15%">Sabah today 6.0</div>
-          <div class="mark below" style="left:17.5%">Zira 7.0</div>
-          <div class="mark" style="left:50%">Typical UEL-level ~20</div>
-          <div class="mark below" style="left:84.4%">Qarabağ 33.75</div>
-        </div>
-        <div style="font-size:12px;color:var(--muted)">Scale 0–40 coefficient points · markers = current 5-year totals</div>
+      <div class="line"><span>Position bonus</span><b id="oPos">—</b></div>
+      <div class="line"><span>Knockout bonus</span><b id="oKo">—</b></div>
+      <div class="line"><span><b>Season 2026/27</b></span><b id="oSeason">—</b></div>
+      <div class="line"><span>+ carried seasons</span><b>${f3(c.carried)}</b></div>
+      <div class="total" id="oTotal">—</div>
+      <div class="delta" id="oDelta"></div>
+      <div class="cmp" id="cmpBar">
+        <div class="fill" id="cmpFill" style="width:0%"></div>
+        <div class="mark" style="left:15%">Sabah 2026/27 seeding 6.0</div>
+        <div class="mark below" style="left:17.5%">Zira 7.0</div>
+        <div class="mark" style="left:50%">Typical UEL club ≈ 20</div>
+        <div class="mark below" style="left:84.4%">Qarabağ 33.75</div>
       </div>
+      <div style="font-size:12px;color:var(--muted)">Scale 0–40 · markers are 5-year totals</div>
     </div>
   </div>
 
-  <h2>6 · How points are earned (UEFA Annex D, 2026/27)</h2>
-  <div class="card">
-    <ul class="rules">
-      <li><b>Qualifying wins do not count</b> for the club coefficient — only for the country ranking. A club's season score comes from where it ends up.</li>
-      <li>Eliminated before any league phase → fixed points on the Conference League scale: Q1 <b>1.0</b> · Q2 <b>1.5</b> · Q3 <b>2.0</b> · play-off <b>2.5</b>. (This is how Sabah earned exactly 2.000 in each of the last three seasons.)</li>
-      <li>League phase onwards: <b>2 points per win, 1 per draw</b>. Guaranteed minimums: UECL <b>2.5</b> · UEL <b>3.0</b>.</li>
-      <li><b>Position bonus</b> after the league phase: UCL 12.0 → 6.0 (everyone 25th–36th still gets 6.0!) · UEL 6.0 → 0 · UECL 4.0 → 0.</li>
-      <li>Knockout rounds reached (R16, QF, SF, Final): UCL <b>+1.5</b> each · UEL <b>+1.0</b> · UECL <b>+0.5</b>.</li>
-      <li>5-year total can never be below <b>20% of Azerbaijan's country coefficient</b> (currently ≈ 3.713 — not relevant, Sabah is above it).</li>
-    </ul>
-  </div>
+  <h2>6 · The rules behind the numbers</h2>
+  <div class="card"><ul class="rules">
+    <li><b>Qualifying results do not add to the club coefficient</b> — they only move the country ranking. What counts is the stage reached.</li>
+    <li>Knocked out before any league phase → fixed points: Q1 <b>1.0</b> · Q2 <b>1.5</b> · Q3 <b>2.0</b> · play-off <b>2.5</b>.</li>
+    <li>League phase onwards: <b>2 points per win, 1 per draw</b>. Guaranteed minimums — UEL <b>3.0</b>, UECL <b>2.5</b>.</li>
+    <li><b>Position bonus:</b> UCL 12.0 → 6.0 (everyone from 25th to 36th still gets <b>6.0</b>) · UEL 6.0 → 0 · UECL 4.0 → 0.</li>
+    <li>Each knockout round reached (R16, QF, SF, final): UCL <b>+1.5</b> · UEL <b>+1.0</b> · UECL <b>+0.5</b>.</li>
+    <li>A club's 5-year total can never fall below <b>20% of its association's</b> 5-year coefficient.</li>
+  </ul></div>`;
 
-  <div class="foot">
-    Sources: <a href="https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2026/27/Annex-D-Coefficient-Ranking-System-Online">UEFA Regulations 2026/27, Annex D</a> ·
-    <a href="https://www.uefa.com/nationalassociations/uefarankings/club/about/">UEFA: how club coefficients are calculated</a> ·
-    <a href="https://www.football-coefficient.eu/team/910-sabah-fk/">football-coefficient.eu — Sabah FK</a> ·
-    match results via UEFA.com / ESPN / Flashscore (July–August 2026). Ranking positions (~#212 etc.) are approximate and move as other clubs play.
-  </div>
-</div>
+  document.getElementById('app').innerHTML = app;
 
-<script>
-  const posBonus = {
-    ucl: r => r>=25 ? 6.0 : 12.0 - 0.25*(r-1),
-    uel: r => r>=25 ? 0 : 6.0 - 0.25*(r-1),
-    uecl: r => { if(r>=25) return 0; if(r<=9) return 4.0 - 0.25*(r-1); return 2.0 - 0.125*(r-9); }
-  };
-  const koBonus = {ucl:1.5, uel:1.0, uecl:0.5};
-  const minPts  = {ucl:0, uel:3.0, uecl:2.5};
-  const games   = {ucl:8, uel:8, uecl:6};
+  document.getElementById('foot').innerHTML =
+    `Match data: <a href="https://www.uefa.com/uefachampionsleague/clubs/2609356--sabah/matches/">UEFA official match feed</a> · ` +
+    `Rules: <a href="${esc(d.source.rulesUrl)}">UEFA Champions League Regulations 2026/27, Annex D</a>` +
+    (d.officialRanking ? ` · UEFA club ranking: <b>${f3(d.officialRanking.totalValue)}</b> (position ${d.officialRanking.position})` : '') +
+    `<br>This page rebuilds itself from UEFA after every match. Data generated ${new Date(d.generatedAt).toUTCString()}.`;
 
+  wireCalculator(c);
+}
+
+function wireCalculator(c){
   const $ = id => document.getElementById(id);
-  const fmt = n => n.toFixed(3);
-
   function recalc(){
-    const c = $('comp').value;
-    const g = games[c];
-    // clamp sliders to number of games
+    const code = $('comp').value, g = GAMES[code];
     $('wins').max = g; $('draws').max = g;
     let w = +$('wins').value, d = +$('draws').value;
-    if (w + d > g) { d = g - w; $('draws').value = d; }
+    if(w + d > g){ d = g - w; $('draws').value = d; }
     $('winsV').textContent = w; $('drawsV').textContent = d;
     const r = +$('rank').value; $('rankV').textContent = r;
 
-    const match = 2*w + d;
-    const useMin = match < minPts[c];
-    const base = useMin ? minPts[c] : match;
-    const pos = posBonus[c](r);
-    let ko = 0; ['r16','qf','sf','fin'].forEach(id => { if($(id).checked) ko += koBonus[c]; });
+    const match  = 2*w + d;
+    const useMin = match < MIN_PTS[code];
+    const base   = useMin ? MIN_PTS[code] : match;
+    const pos    = posBonus(code, r);
+    let ko = 0; ['r16','qf','sf','fin'].forEach(id => { if($(id).checked) ko += KO_BONUS[code]; });
 
-    const season = base + pos + ko;
-    const total = 6.0 + season;
-
-    $('oMatch').textContent = fmt(match);
-    $('oMin').textContent = useMin ? ('yes → ' + fmt(minPts[c])) : '— (match points higher)';
-    $('oPos').textContent = fmt(pos);
-    $('oKo').textContent = fmt(ko);
-    $('oSeason').textContent = fmt(season);
-    $('oTotal').textContent = fmt(total);
-    $('oDelta').textContent = '+' + fmt(total - 6.0) + ' vs today (6.000)';
+    const season = base + pos + ko, total = c.carried + season;
+    $('oMatch').textContent  = f3(match);
+    $('oMin').textContent    = useMin ? 'yes → ' + f3(MIN_PTS[code]) : '— (match points higher)';
+    $('oPos').textContent    = f3(pos);
+    $('oKo').textContent     = f3(ko);
+    $('oSeason').textContent = f3(season);
+    $('oTotal').textContent  = f3(total);
+    $('oDelta').textContent  = '+' + f3(total - 6.0) + ' vs the 6.000 used for 2026/27 seeding';
     $('cmpFill').style.width = Math.min(100, total/40*100) + '%';
   }
-
   ['comp','wins','draws','rank'].forEach(id => $(id).addEventListener('input', recalc));
   ['r16','qf','sf','fin'].forEach(id => $(id).addEventListener('change', recalc));
   recalc();
+}
+
+/* --------------------------------- boot -------------------------------- */
+fetch('./data.json?t=' + Date.now())
+  .then(r => { if(!r.ok) throw new Error('data.json returned ' + r.status); return r.json(); })
+  .then(d => { DATA = d; render(d); })
+  .catch(err => {
+    document.getElementById('liveBadge').textContent = 'Data unavailable';
+    document.getElementById('app').innerHTML =
+      `<div class="err"><b>Could not load the UEFA data file.</b><br>${esc(err.message)}<br><br>
+       The refresh job writes <code>data.json</code> next to this page. If this is a fresh deploy,
+       run the <i>Update Sabah coefficient</i> workflow once from the repository's Actions tab.</div>`;
+  });
 </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T14:08:20.682Z",
+  "generatedAt": "2026-09-04T18:14:48.860Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -525,8 +525,8 @@
       "outcome": null,
       "opponent": "Slavia Praha",
       "opponentCountry": "CZE",
-      "venueCity": "",
-      "venueName": "",
+      "venueCity": "Baku",
+      "venueName": "Baku Olympic Stadium",
       "tieWinnerId": null,
       "tieWinnerText": null,
       "scorers": []
@@ -554,8 +554,8 @@
       "outcome": null,
       "opponent": "B. Dortmund",
       "opponentCountry": "GER",
-      "venueCity": "",
-      "venueName": "",
+      "venueCity": "Baku",
+      "venueName": "Baku Olympic Stadium",
       "tieWinnerId": null,
       "tieWinnerText": null,
       "scorers": []
@@ -612,8 +612,8 @@
       "outcome": null,
       "opponent": "Barcelona",
       "opponentCountry": "ESP",
-      "venueCity": "",
-      "venueName": "",
+      "venueCity": "Baku",
+      "venueName": "Baku Olympic Stadium",
       "tieWinnerId": null,
       "tieWinnerText": null,
       "scorers": []
@@ -670,8 +670,8 @@
       "outcome": null,
       "opponent": "Napoli",
       "opponentCountry": "ITA",
-      "venueCity": "",
-      "venueName": "",
+      "venueCity": "Baku",
+      "venueName": "Baku Olympic Stadium",
       "tieWinnerId": null,
       "tieWinnerText": null,
       "scorers": []

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T04:30:35.257Z",
+  "generatedAt": "2026-09-09T09:32:22.178Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -371,7 +371,7 @@
       "opponent": "H. Beer-Sheva",
       "opponentCountry": "ISR",
       "venueCity": "Bucharest",
-      "venueName": "Stadionul Giulești",
+      "venueName": "Giulesti Stadium",
       "tieWinnerId": "2609356",
       "tieWinnerText": "Sabah win after extra time",
       "scorers": [

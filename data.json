@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T18:16:17.986Z",
+  "generatedAt": "2026-09-10T21:31:29.311Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -483,24 +483,52 @@
       "leg": null,
       "kickOff": "2026-09-10T19:00:00Z",
       "date": "2026-09-10",
-      "status": "UPCOMING",
+      "status": "FINISHED",
       "isHome": false,
       "homeTeam": "Man Utd",
       "awayTeam": "Sabah",
       "homeCountry": "ENG",
       "awayCountry": "AZE",
-      "homeScore": null,
-      "awayScore": null,
-      "regular": null,
+      "homeScore": 4,
+      "awayScore": 0,
+      "regular": {
+        "away": 0,
+        "home": 4
+      },
       "aggregate": null,
-      "outcome": null,
+      "outcome": "loss",
       "opponent": "Man Utd",
       "opponentCountry": "ENG",
       "venueCity": "Manchester",
       "venueName": "Old Trafford",
       "tieWinnerId": null,
       "tieWinnerText": null,
-      "scorers": []
+      "scorers": [
+        {
+          "player": "Matheus Cunha",
+          "minute": 27,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "Bruno Fernandes",
+          "minute": 42,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "Šeško",
+          "minute": 45,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "Martínez",
+          "minute": 68,
+          "forSabah": false,
+          "type": "SCORED"
+        }
+      ]
     },
     {
       "id": "2049579",
@@ -707,84 +735,6 @@
     }
   ],
   "lastResult": {
-    "id": "2049219",
-    "competition": "UCL",
-    "roundName": "Play-offs",
-    "roundType": "PLAY_OFF",
-    "roundMode": "KNOCK_OUT",
-    "matchdayNo": 2,
-    "leg": 2,
-    "kickOff": "2026-08-25T16:45:00Z",
-    "date": "2026-08-25",
-    "status": "FINISHED",
-    "isHome": true,
-    "homeTeam": "Sabah",
-    "awayTeam": "H. Beer-Sheva",
-    "homeCountry": "AZE",
-    "awayCountry": "ISR",
-    "homeScore": 5,
-    "awayScore": 2,
-    "regular": {
-      "away": 2,
-      "home": 3
-    },
-    "aggregate": {
-      "away": 4,
-      "home": 6
-    },
-    "outcome": "win",
-    "opponent": "H. Beer-Sheva",
-    "opponentCountry": "ISR",
-    "venueCity": "Baku",
-    "venueName": "Tofiq Bahramov Republican Stadium",
-    "tieWinnerId": "2609356",
-    "tieWinnerText": "Sabah win after extra time",
-    "scorers": [
-      {
-        "player": "Zlatanović",
-        "minute": 10,
-        "forSabah": false,
-        "type": "SCORED"
-      },
-      {
-        "player": "Nwachukwu",
-        "minute": 38,
-        "forSabah": true,
-        "type": "SCORED"
-      },
-      {
-        "player": "Mizrahi",
-        "minute": 61,
-        "forSabah": false,
-        "type": "SCORED"
-      },
-      {
-        "player": "Rakhmonaliev",
-        "minute": 74,
-        "forSabah": true,
-        "type": "SCORED"
-      },
-      {
-        "player": "Mutallimov",
-        "minute": 90,
-        "forSabah": true,
-        "type": "SCORED"
-      },
-      {
-        "player": "Mbina",
-        "minute": 101,
-        "forSabah": true,
-        "type": "SCORED"
-      },
-      {
-        "player": "Mickels",
-        "minute": 115,
-        "forSabah": true,
-        "type": "SCORED"
-      }
-    ]
-  },
-  "nextMatch": {
     "id": "2049566",
     "competition": "UCL",
     "roundName": "League phase",
@@ -794,21 +744,78 @@
     "leg": null,
     "kickOff": "2026-09-10T19:00:00Z",
     "date": "2026-09-10",
-    "status": "UPCOMING",
+    "status": "FINISHED",
     "isHome": false,
     "homeTeam": "Man Utd",
     "awayTeam": "Sabah",
     "homeCountry": "ENG",
     "awayCountry": "AZE",
+    "homeScore": 4,
+    "awayScore": 0,
+    "regular": {
+      "away": 0,
+      "home": 4
+    },
+    "aggregate": null,
+    "outcome": "loss",
+    "opponent": "Man Utd",
+    "opponentCountry": "ENG",
+    "venueCity": "Manchester",
+    "venueName": "Old Trafford",
+    "tieWinnerId": null,
+    "tieWinnerText": null,
+    "scorers": [
+      {
+        "player": "Matheus Cunha",
+        "minute": 27,
+        "forSabah": false,
+        "type": "SCORED"
+      },
+      {
+        "player": "Bruno Fernandes",
+        "minute": 42,
+        "forSabah": false,
+        "type": "SCORED"
+      },
+      {
+        "player": "Šeško",
+        "minute": 45,
+        "forSabah": false,
+        "type": "SCORED"
+      },
+      {
+        "player": "Martínez",
+        "minute": 68,
+        "forSabah": false,
+        "type": "SCORED"
+      }
+    ]
+  },
+  "nextMatch": {
+    "id": "2049579",
+    "competition": "UCL",
+    "roundName": "League phase",
+    "roundType": "GROUP_STANDINGS",
+    "roundMode": "GROUP",
+    "matchdayNo": 2,
+    "leg": null,
+    "kickOff": "2026-10-13T16:45:00Z",
+    "date": "2026-10-13",
+    "status": "UPCOMING",
+    "isHome": true,
+    "homeTeam": "Sabah",
+    "awayTeam": "Slavia Praha",
+    "homeCountry": "AZE",
+    "awayCountry": "CZE",
     "homeScore": null,
     "awayScore": null,
     "regular": null,
     "aggregate": null,
     "outcome": null,
-    "opponent": "Man Utd",
-    "opponentCountry": "ENG",
-    "venueCity": "Manchester",
-    "venueName": "Old Trafford",
+    "opponent": "Slavia Praha",
+    "opponentCountry": "CZE",
+    "venueCity": "Baku",
+    "venueName": "Baku Olympic Stadium",
     "tieWinnerId": null,
     "tieWinnerText": null,
     "scorers": []
@@ -818,12 +825,12 @@
     "reachedLeaguePhase": true,
     "eliminatedAt": null,
     "leaguePhase": {
-      "played": 0,
+      "played": 1,
       "total": 8,
-      "remaining": 8,
+      "remaining": 7,
       "wins": 0,
       "draws": 0,
-      "losses": 0,
+      "losses": 1,
       "matchPoints": 0
     },
     "guaranteedMinimum": 0,
@@ -834,7 +841,7 @@
     "carried": 6,
     "coefficientNow": 6,
     "coefficientFloor": 12,
-    "note": "UCL league phase secured — match points start accruing at matchday 1."
+    "note": "League phase in progress — match points banked so far."
   },
   "officialRanking": null,
   "rules": {

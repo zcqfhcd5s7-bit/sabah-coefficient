@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T08:58:46.308Z",
+  "generatedAt": "2026-10-12T18:55:16.749Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -612,7 +612,7 @@
       "opponent": "Viking",
       "opponentCountry": "NOR",
       "venueCity": "Stavanger",
-      "venueName": "Viking stadion",
+      "venueName": "Viking Stadion",
       "tieWinnerId": null,
       "tieWinnerText": null,
       "scorers": []

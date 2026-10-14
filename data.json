@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-14T13:33:00.292Z",
+  "generatedAt": "2026-10-14T14:41:23.878Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
     "rulesUrl": "https://documents.uefa.com/r/Regulations-of-the-UEFA-Champions-League-2026/27/Annex-D-Coefficient-Ranking-System-Online",
-    "ranking": null
+    "ranking": "https://comp.uefa.com/v2/coefficients (official UEFA club ranking)"
   },
   "club": {
     "id": "2609356",
@@ -847,7 +847,163 @@
     "coefficientFloor": 14,
     "note": "League phase in progress — match points banked so far."
   },
-  "officialRanking": null,
+  "officialRanking": {
+    "position": 126,
+    "club": "Sabah",
+    "country": "AZE",
+    "points": 14,
+    "trend": "UP",
+    "isSabah": true,
+    "ofTotal": 415,
+    "lastUpdated": "2026-10-13T20:56:16+0000",
+    "matchesCounted": 2,
+    "seasonBreakdown": [
+      {
+        "season": 2027,
+        "points": 8,
+        "bonus": 6,
+        "matches": 2,
+        "seasonPosition": 17
+      },
+      {
+        "season": 2026,
+        "points": 2,
+        "bonus": 2,
+        "matches": 0,
+        "seasonPosition": 146
+      },
+      {
+        "season": 2025,
+        "points": 2,
+        "bonus": 2,
+        "matches": 0,
+        "seasonPosition": 141
+      },
+      {
+        "season": 2024,
+        "points": 2,
+        "bonus": 2,
+        "matches": 0,
+        "seasonPosition": 143
+      }
+    ],
+    "neighbours": [
+      {
+        "position": 123,
+        "club": "Dynamo Kyiv",
+        "country": "UKR",
+        "points": 14.5,
+        "trend": "STABLE",
+        "isSabah": false
+      },
+      {
+        "position": 124,
+        "club": "Maccabi Haifa",
+        "country": "ISR",
+        "points": 14.5,
+        "trend": "STABLE",
+        "isSabah": false
+      },
+      {
+        "position": 125,
+        "club": "Víkingur R.",
+        "country": "ISL",
+        "points": 14.25,
+        "trend": "STABLE",
+        "isSabah": false
+      },
+      {
+        "position": 126,
+        "club": "Sabah",
+        "country": "AZE",
+        "points": 14,
+        "trend": "UP",
+        "isSabah": true
+      },
+      {
+        "position": 127,
+        "club": "Toulouse",
+        "country": "FRA",
+        "points": 13.83,
+        "trend": "DOWN",
+        "isSabah": false
+      },
+      {
+        "position": 128,
+        "club": "Nantes",
+        "country": "FRA",
+        "points": 13.83,
+        "trend": "DOWN",
+        "isSabah": false
+      },
+      {
+        "position": 129,
+        "club": "Beşiktaş",
+        "country": "TUR",
+        "points": 13.5,
+        "trend": "DOWN",
+        "isSabah": false
+      }
+    ],
+    "association": [
+      {
+        "position": 58,
+        "club": "Qarabağ",
+        "country": "AZE",
+        "points": 36.25,
+        "trend": "STABLE",
+        "isSabah": false
+      },
+      {
+        "position": 126,
+        "club": "Sabah",
+        "country": "AZE",
+        "points": 14,
+        "trend": "UP",
+        "isSabah": true
+      },
+      {
+        "position": 220,
+        "club": "Zire",
+        "country": "AZE",
+        "points": 7,
+        "trend": "STABLE",
+        "isSabah": false
+      },
+      {
+        "position": 265,
+        "club": "Neftchi",
+        "country": "AZE",
+        "points": 5.5,
+        "trend": "STABLE",
+        "isSabah": false
+      },
+      {
+        "position": 297,
+        "club": "Araz-Naxçıvan",
+        "country": "AZE",
+        "points": 4.837,
+        "trend": "UP",
+        "isSabah": false
+      },
+      {
+        "position": 298,
+        "club": "Sumqayıt",
+        "country": "AZE",
+        "points": 4.837,
+        "trend": "UP",
+        "isSabah": false
+      },
+      {
+        "position": 299,
+        "club": "Gabala",
+        "country": "AZE",
+        "points": 4.837,
+        "trend": "UP",
+        "isSabah": false
+      }
+    ]
+  },
   "rules": {
     "qualifyingExit": {
       "QUALIFYING_ROUND_1": 1,

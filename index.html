@@ -100,6 +100,30 @@
 
   ul.rules{font-size:13.5px;color:var(--muted);padding-left:18px;display:grid;gap:6px}
   ul.rules b{color:var(--txt)}
+
+  /* version history */
+  .vgrid{display:grid;gap:10px}
+  .vrow{display:grid;grid-template-columns:78px 112px 86px 1fr;gap:12px;align-items:start;
+        background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:11px 14px;font-size:13.5px}
+  @media(max-width:700px){.vrow{grid-template-columns:78px 1fr;row-gap:4px}
+                          .vrow .vdate,.vrow .vkind{grid-column:2}}
+  .vnum{font-weight:800;font-variant-numeric:tabular-nums;color:var(--txt)}
+  .vdate{color:var(--muted);font-size:12.5px}
+  .vkind{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
+         border-radius:20px;padding:2px 9px;justify-self:start;height:fit-content}
+  .vkind.major{background:#3a2030;color:var(--red)}
+  .vkind.minor{background:#20303a;color:var(--accent)}
+  .vkind.patch{background:#203a2e;color:var(--green)}
+  .vrow.current{border-color:var(--gold)}
+  .vrow.current .vnum{color:var(--gold)}
+  .vlegend{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:10px;margin-bottom:14px}
+  .vleg{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:11px 13px;
+        font-size:12.5px;color:var(--muted)}
+  .vleg b{display:block;color:var(--txt);font-size:13.5px;margin-bottom:3px}
+  .vleg code,.h2sub code{color:var(--accent);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .vcur{display:inline-block;background:var(--card2);border:1px solid var(--gold);color:var(--gold);
+        border-radius:20px;padding:3px 11px;font-weight:800;font-size:12.5px;
+        font-variant-numeric:tabular-nums;vertical-align:middle;margin-left:8px}
   .foot{margin-top:36px;font-size:12px;color:var(--muted)}
   .foot a{color:var(--accent);text-decoration:none}
   .err{background:#3a2030;border:1px solid var(--red);color:#ffd9d9;border-radius:12px;padding:14px 16px;font-size:14px}
@@ -115,6 +139,8 @@
   <div class="sub" id="subline">Auto-updating from UEFA's official match feed.</div>
 
   <div id="app"></div>
+
+  <div id="versions"></div>
 
   <div class="foot" id="foot"></div>
 </div>
@@ -139,6 +165,45 @@ const FLAG = {AZE:'🇦🇿',WAL:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',FIN:'🇫🇮',D
              SCO:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',TUR:'🇹🇷',GRE:'🇬🇷',NOR:'🇳🇴',SWE:'🇸🇪',CZE:'🇨🇿',AUT:'🇦🇹',SUI:'🇨🇭',CRO:'🇭🇷',
              UKR:'🇺🇦',ROU:'🇷🇴',KAZ:'🇰🇿',CYP:'🇨🇾',HUN:'🇭🇺',SVK:'🇸🇰',ARM:'🇦🇲',LTU:'🇱🇹',NIR:'🏴󠁧󠁢󠁮󠁩󠁲󠁿'};
 const flag = cc => FLAG[cc] || '';
+
+/* ---------------------------- version history ---------------------------
+   major.minor.patch. Raising a number resets the ones after it to zero.
+   Releases are counted, not individual edits — the automatic UEFA data
+   refreshes that run several times a day are not releases.
+   Newest first; RELEASES[0] is the current version.                       */
+const RELEASES = [
+  {v:'2.1.0', date:'2026-10-14', kind:'minor',
+   text:'Added this version history section.'},
+  {v:'2.0.0', date:'2026-08-26', kind:'major',
+   text:'Rebuilt as a data-driven tracker. The page now renders from data.json, which a scheduled job regenerates from UEFA’s official match feed, so results, match points and every scenario update without anyone editing the page. Breaking change: the page is no longer a standalone file and will not display without data.json beside it.'},
+  {v:'1.1.0', date:'2026-08-12', kind:'minor',
+   text:'Reworked after the 5–2 aggregate win over AGF Aarhus. Conference League branch dropped, guaranteed floor raised from 8.500 to 9.000, calculator narrowed to the two paths still reachable.'},
+  {v:'1.0.0', date:'2026-07-30', kind:'major',
+   text:'First public release. Coefficient breakdown, campaign results, exit scenarios and the interactive calculator, all maintained by hand.'},
+];
+
+function renderVersions(){
+  const cur = RELEASES[0];
+  const rows = RELEASES.map((r, i) => `
+    <div class="vrow${i === 0 ? ' current' : ''}">
+      <span class="vnum">${esc(r.v)}</span>
+      <span class="vdate">${new Date(r.date + 'T12:00:00Z')
+        .toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'numeric'})}</span>
+      <span class="vkind ${esc(r.kind)}">${esc(r.kind)}</span>
+      <span>${esc(r.text)}</span>
+    </div>`).join('');
+  document.getElementById('versions').innerHTML = `
+    <h2>7 · Version history <span class="vcur">v${esc(cur.v)}</span></h2>
+    <div class="h2sub">Three numbers — <code>major.minor.patch</code>. Raising one resets the numbers after it to zero.
+      Releases are counted, not individual edits: several fixes published together are one release, and the automatic
+      UEFA data refreshes are not releases at all.</div>
+    <div class="vlegend">
+      <div class="vleg"><b>Patch — last number</b>A bug fix or small visual adjustment. <code>1.0.0 → 1.0.1</code></div>
+      <div class="vleg"><b>Minor — middle number</b>A new feature that breaks nothing existing. <code>1.0.1 → 1.1.0</code></div>
+      <div class="vleg"><b>Major — first number</b>A change that breaks compatibility or how the page is used. <code>1.1.0 → 2.0.0</code></div>
+    </div>
+    <div class="vgrid">${rows}</div>`;
+}
 
 let DATA = null;
 
@@ -388,6 +453,9 @@ function wireCalculator(c){
 }
 
 /* --------------------------------- boot -------------------------------- */
+// Rendered first and independently, so the history survives a data failure.
+renderVersions();
+
 fetch('./data.json?t=' + Date.now())
   .then(r => { if(!r.ok) throw new Error('data.json returned ' + r.status); return r.json(); })
   .then(d => { DATA = d; render(d); })

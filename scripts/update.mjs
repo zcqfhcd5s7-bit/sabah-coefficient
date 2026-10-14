@@ -77,29 +77,57 @@ async function fetchMatches(competitionId) {
   }
 }
 
-/** Best-effort: UEFA's published club coefficient ranking. Optional. */
-async function fetchOfficialCoefficient() {
+/**
+ * UEFA's published club coefficient ranking — the live 5-season table used for
+ * seeding. The endpoint pages with `page` + `pagesize` (both lowercase; `limit`
+ * and `offset` are silently ignored and always return the top 20).
+ */
+async function fetchOfficialRanking() {
   if (process.env.SABAH_FIXTURE) return null;
   const base = 'https://comp.uefa.com/v2/coefficients'
              + `?coefficientRange=OVERALL&coefficientType=MEN_CLUB&language=EN&seasonYear=${SEASON}`;
-  // The endpoint paginates inconsistently, so try a few known styles and stop
-  // as soon as Sabah shows up. If none work we simply omit this block.
-  const attempts = [ '', '&page=1&pageSize=500', '&limit=500', '&offset=0&limit=500', '&size=500' ];
-  for (const suffix of attempts) {
-    try {
-      const json = await getJSON(base + suffix);
+  try {
+    let all = [], updated = null, total = null;
+    for (let page = 1; page <= 12; page++) {           // ~415 clubs today
+      const json = await getJSON(`${base}&page=${page}&pagesize=100`);
       const members = json?.data?.members ?? [];
-      const hit = members.find(m => String(m?.member?.id) === TEAM_ID);
-      if (hit) {
-        return {
-          totalValue:  hit.overallRanking?.totalValue ?? null,
-          position:    hit.overallRanking?.position ?? null,
-          lastUpdated: json?.data?.lastUpdateDate ?? null,
-        };
-      }
-    } catch { /* try the next style */ }
+      updated = json?.data?.lastUpdateDate ?? updated;
+      total   = json?.meta?.collection?.totalElements ?? total;
+      all = all.concat(members);
+      if (members.length < 100) break;
+    }
+
+    const i = all.findIndex(m => String(m?.member?.id) === TEAM_ID);
+    if (i < 0) { console.error('  ! ranking: Sabah not present in the table'); return null; }
+
+    const slim = m => ({
+      position: m.overallRanking?.position ?? null,
+      club:     m.member?.displayName ?? '',
+      country:  m.member?.countryCode ?? '',
+      points:   m.overallRanking?.totalValue ?? null,
+      trend:    m.overallRanking?.trend ?? null,
+      isSabah:  String(m?.member?.id) === TEAM_ID,
+    });
+
+    const me = all[i];
+    return {
+      ...slim(me),
+      ofTotal: total ? Number(total) : all.length,
+      lastUpdated: updated,
+      matchesCounted: me.overallRanking?.numberOfMatches ?? null,
+      // Per-season split straight from UEFA, newest first.
+      seasonBreakdown: (me.seasonRankings ?? [])
+        .map(r => ({ season: Number(r.seasonYear), points: r.totalValue,
+                     bonus: r.factorTotalBonus, matches: r.numberOfMatches,
+                     seasonPosition: r.position }))
+        .sort((a, b) => b.season - a.season),
+      neighbours: all.slice(Math.max(0, i - 3), i + 4).map(slim),
+      association: all.filter(m => m.member?.countryCode === 'AZE').map(slim),
+    };
+  } catch (err) {
+    console.error('  ! ranking: ' + err.message);
+    return null;
   }
-  return null;
 }
 
 /* ------------------------------------------------------------- normalising */
@@ -269,7 +297,8 @@ async function main() {
   const finished  = matches.filter(m => m.status === 'FINISHED');
   const upcoming  = matches.filter(m => m.status !== 'FINISHED');
   const coefficient = computeCoefficient(matches);
-  const official    = await fetchOfficialCoefficient();
+  console.log('Fetching the official UEFA club ranking…');
+  const official    = await fetchOfficialRanking();
 
   const data = {
     generatedAt: new Date().toISOString(),
@@ -308,6 +337,9 @@ async function main() {
   console.log(`Competition: ${coefficient.competition}`
             + `  league phase: ${coefficient.reachedLeaguePhase ? 'yes' : 'not yet'}`);
   console.log(`Coefficient now ${coefficient.coefficientNow} · floor ${coefficient.coefficientFloor}`);
+  console.log(official
+    ? `UEFA ranking: ${official.position} of ${official.ofTotal} · ${official.points} pts (${official.trend})`
+    : 'UEFA ranking: unavailable this run');
 }
 
 main().catch(err => { console.error(err); process.exit(1); });

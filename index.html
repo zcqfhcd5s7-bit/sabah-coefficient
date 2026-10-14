@@ -101,6 +101,29 @@
   ul.rules{font-size:13.5px;color:var(--muted);padding-left:18px;display:grid;gap:6px}
   ul.rules b{color:var(--txt)}
 
+  /* official ranking */
+  .rank2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:820px){.rank2{grid-template-columns:1fr}}
+  .rtable{display:grid;gap:4px}
+  .rrow{display:grid;grid-template-columns:52px 1fr 76px 26px;gap:10px;align-items:center;
+        padding:8px 12px;border-radius:9px;font-size:13.5px;border:1px solid transparent}
+  .rrow.head{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em;
+             font-weight:700;padding-bottom:2px}
+  .rrow.me{background:#1b2a1f;border-color:var(--green)}
+  .rrow.me .rclub,.rrow.me .rpos,.rrow.me .rpts{color:var(--green);font-weight:800}
+  .rpos,.rpts{font-variant-numeric:tabular-nums}
+  .rpts{text-align:right}
+  .rtrend{text-align:center;font-size:12px}
+  .rtrend.UP{color:var(--green)} .rtrend.DOWN{color:var(--red)} .rtrend.STABLE{color:var(--muted)}
+  .rsplit{display:grid;gap:4px;font-size:13.5px}
+  .rsplit .srow{display:grid;grid-template-columns:86px 1fr 70px;gap:10px;padding:7px 12px;
+                border-radius:9px;align-items:center}
+  .rsplit .srow.live{background:var(--card2);border:1px solid var(--gold)}
+  .rsplit .srow.live b{color:var(--gold)}
+  .rsplit .srow .ssub{color:var(--muted);font-size:12px}
+  .rsplit .srow b{font-variant-numeric:tabular-nums;text-align:right}
+  .rnote{font-size:12.5px;color:var(--muted);margin-top:10px}
+
   /* version history */
   .vgrid{display:grid;gap:10px}
   .vrow{display:grid;grid-template-columns:78px 112px 86px 1fr;gap:12px;align-items:start;
@@ -165,6 +188,8 @@ const FLAG = {AZE:'🇦🇿',WAL:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',FIN:'🇫🇮',D
              SCO:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',TUR:'🇹🇷',GRE:'🇬🇷',NOR:'🇳🇴',SWE:'🇸🇪',CZE:'🇨🇿',AUT:'🇦🇹',SUI:'🇨🇭',CRO:'🇭🇷',
              UKR:'🇺🇦',ROU:'🇷🇴',KAZ:'🇰🇿',CYP:'🇨🇾',HUN:'🇭🇺',SVK:'🇸🇰',ARM:'🇦🇲',LTU:'🇱🇹',NIR:'🏴󠁧󠁢󠁮󠁩󠁲󠁿'};
 const flag = cc => FLAG[cc] || '';
+const TREND = {UP:' · ▲ rising', DOWN:' · ▼ falling', STABLE:''};
+const ARROW = {UP:'▲', DOWN:'▼', STABLE:'–'};
 
 /* ---------------------------- version history ---------------------------
    major.minor.patch. Raising a number resets the ones after it to zero.
@@ -172,6 +197,8 @@ const flag = cc => FLAG[cc] || '';
    refreshes that run several times a day are not releases.
    Newest first; RELEASES[0] is the current version.                       */
 const RELEASES = [
+  {v:'2.2.0', date:'2026-10-14', kind:'minor',
+   text:'Added Sabah’s official UEFA club ranking: European position, the clubs immediately around it, every Azerbaijani club, and UEFA’s own five-season breakdown. Refreshes with the rest of the data after each match.'},
   {v:'2.1.0', date:'2026-10-14', kind:'minor',
    text:'Added this version history section.'},
   {v:'2.0.0', date:'2026-08-26', kind:'major',
@@ -193,7 +220,7 @@ function renderVersions(){
       <span>${esc(r.text)}</span>
     </div>`).join('');
   document.getElementById('versions').innerHTML = `
-    <h2>7 · Version history <span class="vcur">v${esc(cur.v)}</span></h2>
+    <h2>8 · Version history <span class="vcur">v${esc(cur.v)}</span></h2>
     <div class="h2sub">Three numbers — <code>major.minor.patch</code>. Raising one resets the numbers after it to zero.
       Releases are counted, not individual edits: several fixes published together are one release, and the automatic
       UEFA data refreshes are not releases at all.</div>
@@ -230,6 +257,66 @@ function matchCard(m, isNext){
     <div class="meta">${agg || (isNext ? 'Upcoming' : '')}${goals ? ' · ⚽ ' + goals : ''}</div>
   </div>`;
 }
+
+function rankingSection(d){
+  const r = d.officialRanking;
+  if(!r) return `
+    <h2>2 · Where Sabah sits in Europe</h2>
+    <div class="h2sub">UEFA's ranking table could not be read on the last refresh. The campaign figures below
+      are unaffected — they come from the match feed, which is a separate source.</div>`;
+
+  const row = x => `
+    <div class="rrow${x.isSabah ? ' me' : ''}">
+      <span class="rpos">${x.position}</span>
+      <span class="rclub">${esc(x.club)} ${flag(x.country)}</span>
+      <span class="rpts">${f3(x.points)}</span>
+      <span class="rtrend ${esc(x.trend || 'STABLE')}">${ARROW[x.trend] || ''}</span>
+    </div>`;
+
+  const seasons = r.seasonBreakdown.map(s => {
+    const label = (s.season - 1) + '/' + String(s.season).slice(2);
+    const live = s.season === 2027;
+    return `<div class="srow${live ? ' live' : ''}">
+      <span>${label}${live ? ' <span class="ssub">live</span>' : ''}</span>
+      <span class="ssub">${live
+        ? `${s.matches} match${s.matches === 1 ? '' : 'es'} played · ${f3(s.bonus)} league-phase bonus`
+        : 'qualifying exit'}</span>
+      <b>${f3(s.points)}</b></div>`;
+  }).join('');
+
+  return `
+  <h2>2 · Where Sabah sits in Europe</h2>
+  <div class="h2sub">UEFA's own club coefficient table — the one used for seeding. Sabah is
+    <b style="color:var(--green)">${r.position}${ordinal(r.position)} of ${r.ofTotal}</b> clubs with
+    <b style="color:var(--green)">${f3(r.points)}</b> points${r.trend === 'UP' ? ', and rising' : r.trend === 'DOWN' ? ', and falling' : ''}.
+    UEFA last recalculated it ${new Date(r.lastUpdated).toLocaleString('en-GB',
+      {day:'numeric', month:'short', hour:'2-digit', minute:'2-digit'})}.</div>
+  <div class="rank2">
+    <div class="card">
+      <div class="rrow head"><span>Pos</span><span>Club</span><span style="text-align:right">Pts</span><span></span></div>
+      <div class="rtable">${r.neighbours.map(row).join('')}</div>
+      <div class="rnote">Immediate neighbours in the European table.</div>
+    </div>
+    <div class="card">
+      <div class="rrow head"><span>Pos</span><span>Azerbaijani clubs</span><span style="text-align:right">Pts</span><span></span></div>
+      <div class="rtable">${r.association.map(row).join('')}</div>
+      <div class="rnote">Sabah is ${r.association.filter(x => x.points > r.points).length === 0
+        ? 'the highest-ranked club in Azerbaijan'
+        : 'ranked ' + (r.association.filter(x => x.points > r.points).length + 1) + ordinal(r.association.filter(x => x.points > r.points).length + 1) + ' in Azerbaijan'}.</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <div class="h2sub" style="margin-bottom:10px">How UEFA builds that ${f3(r.points)} — the five seasons it counts:</div>
+    <div class="rsplit">${seasons}</div>
+    <div class="rnote">The ${f3(r.points)} total already includes the ${f3(r.seasonBreakdown.find(s=>s.season===2027)?.bonus ?? 0)}
+      league-phase bonus Sabah is guaranteed, which is why UEFA's figure is above the match points banked so far.</div>
+  </div>`;
+}
+
+const ordinal = n => {
+  const s = ['th','st','nd','rd'], v = n % 100;
+  return s[(v - 20) % 10] || s[v] || s[0];
+};
 
 function scenarioCards(c){
   const code = c.competition, g = GAMES[code], min = MIN_PTS[code], base = c.carried;
@@ -317,8 +404,13 @@ function render(d){
       <div class="note">${d.nextMatch ? 'Next: ' + esc(d.nextMatch.opponent) + ' ' + flag(d.nextMatch.opponentCountry) + ' · ' + fmtDate(d.nextMatch.kickOff) : 'Draw pending'}</div></div>
     <div class="kpi green"><div class="lbl">Guaranteed for 2027/28</div><div class="val">${f3(c.coefficientFloor)}</div>
       <div class="note">even with nothing more from here</div></div>
-    <div class="kpi gold"><div class="lbl">Realistic ceiling</div><div class="val">${inLP?'18+':'—'}</div>
-      <div class="note">${inLP?'with a knockout run':'depends on the run'}</div></div>
+    ${d.officialRanking ? `
+    <div class="kpi gold"><div class="lbl">UEFA European rank</div>
+      <div class="val">#${d.officialRanking.position}</div>
+      <div class="note">${f3(d.officialRanking.points)} pts · of ${d.officialRanking.ofTotal} clubs${TREND[d.officialRanking.trend] || ''}</div></div>`
+    : `
+    <div class="kpi gold"><div class="lbl">UEFA European rank</div><div class="val">—</div>
+      <div class="note">ranking unavailable this refresh</div></div>`}
   </div>
 
   <h2>1 · Where the coefficient comes from</h2>
@@ -335,13 +427,15 @@ function render(d){
     </div>
   </div>
 
-  <h2>2 · The campaign, straight from UEFA</h2>
+  ${rankingSection(d)}
+
+  <h2>3 · The campaign, straight from UEFA</h2>
   <div class="h2sub">${played.length} match${played.length===1?'':'es'} played. Qualifying wins feed Azerbaijan's <i>country</i> coefficient, not Sabah's <i>club</i> coefficient — for the club, only the stage reached counts.</div>
   <div class="matches">
     ${d.matches.map(m => matchCard(m, m === d.nextMatch)).join('')}
   </div>
 
-  <h2>3 · What is already locked in</h2>
+  <h2>4 · What is already locked in</h2>
   <div class="h2sub">${esc(c.note)}</div>
   <div class="card tree">
     ${inLP ? `
@@ -354,11 +448,11 @@ function render(d){
     : `<div class="lvl" style="color:var(--muted)">Season floor so far: <b style="color:var(--green)">${f3(c.coefficientFloor)}</b></div>`}
   </div>
 
-  <h2>4 · Scenarios for next season's coefficient</h2>
+  <h2>5 · Scenarios for next season's coefficient</h2>
   <div class="h2sub">Coefficient 2027/28 = ${f3(c.carried)} carried + whatever 2026/27 produces. These recompute automatically as results come in.</div>
   <div class="grid scenarios">${scenarioCards(c)}</div>
 
-  <h2>5 · Build your own scenario</h2>
+  <h2>6 · Build your own scenario</h2>
   <div class="h2sub">Sliders start from the results already recorded.</div>
   <div class="card calc">
     <div>
@@ -400,7 +494,7 @@ function render(d){
     </div>
   </div>
 
-  <h2>6 · The rules behind the numbers</h2>
+  <h2>7 · The rules behind the numbers</h2>
   <div class="card"><ul class="rules">
     <li><b>Qualifying results do not add to the club coefficient</b> — they only move the country ranking. What counts is the stage reached.</li>
     <li>Knocked out before any league phase → fixed points: Q1 <b>1.0</b> · Q2 <b>1.5</b> · Q3 <b>2.0</b> · play-off <b>2.5</b>.</li>
@@ -415,7 +509,7 @@ function render(d){
   document.getElementById('foot').innerHTML =
     `Match data: <a href="https://www.uefa.com/uefachampionsleague/clubs/2609356--sabah/matches/">UEFA official match feed</a> · ` +
     `Rules: <a href="${esc(d.source.rulesUrl)}">UEFA Champions League Regulations 2026/27, Annex D</a>` +
-    (d.officialRanking ? ` · UEFA club ranking: <b>${f3(d.officialRanking.totalValue)}</b> (position ${d.officialRanking.position})` : '') +
+    (d.officialRanking ? ` · <a href="https://www.uefa.com/nationalassociations/uefarankings/club/">UEFA club coefficient ranking</a>` : '') +
     `<br>This page rebuilds itself from UEFA after every match. Data generated ${new Date(d.generatedAt).toUTCString()}.`;
 
   wireCalculator(c);

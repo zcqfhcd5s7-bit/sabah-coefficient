@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T18:10:09.689Z",
+  "generatedAt": "2026-10-15T22:04:52.609Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -848,14 +848,14 @@
     "note": "League phase in progress — match points banked so far."
   },
   "officialRanking": {
-    "position": 126,
+    "position": 128,
     "club": "Sabah",
     "country": "AZE",
     "points": 14,
     "trend": "UP",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-10-14T20:57:25+0000",
+    "lastUpdated": "2026-10-15T21:26:16+0000",
     "matchesCounted": 2,
     "seasonBreakdown": [
       {
@@ -889,22 +889,6 @@
     ],
     "neighbours": [
       {
-        "position": 123,
-        "club": "Dynamo Kyiv",
-        "country": "UKR",
-        "points": 14.5,
-        "trend": "STABLE",
-        "isSabah": false
-      },
-      {
-        "position": 124,
-        "club": "Maccabi Haifa",
-        "country": "ISR",
-        "points": 14.5,
-        "trend": "STABLE",
-        "isSabah": false
-      },
-      {
         "position": 125,
         "club": "Víkingur R.",
         "country": "ISL",
@@ -914,27 +898,27 @@
       },
       {
         "position": 126,
+        "club": "Toulouse",
+        "country": "FRA",
+        "points": 14.002,
+        "trend": "STABLE",
+        "isSabah": false
+      },
+      {
+        "position": 127,
+        "club": "Nantes",
+        "country": "FRA",
+        "points": 14.002,
+        "trend": "STABLE",
+        "isSabah": false
+      },
+      {
+        "position": 128,
         "club": "Sabah",
         "country": "AZE",
         "points": 14,
         "trend": "UP",
         "isSabah": true
-      },
-      {
-        "position": 127,
-        "club": "Toulouse",
-        "country": "FRA",
-        "points": 13.887,
-        "trend": "DOWN",
-        "isSabah": false
-      },
-      {
-        "position": 128,
-        "club": "Nantes",
-        "country": "FRA",
-        "points": 13.887,
-        "trend": "DOWN",
-        "isSabah": false
       },
       {
         "position": 129,
@@ -943,11 +927,27 @@
         "points": 13.5,
         "trend": "DOWN",
         "isSabah": false
+      },
+      {
+        "position": 130,
+        "club": "Twente",
+        "country": "NED",
+        "points": 13.5,
+        "trend": "DOWN",
+        "isSabah": false
+      },
+      {
+        "position": 131,
+        "club": "Torreense",
+        "country": "POR",
+        "points": 13.31,
+        "trend": "DOWN",
+        "isSabah": false
       }
     ],
     "association": [
       {
-        "position": 59,
+        "position": 60,
         "club": "Qarabağ",
         "country": "AZE",
         "points": 36.25,
@@ -955,7 +955,7 @@
         "isSabah": false
       },
       {
-        "position": 126,
+        "position": 128,
         "club": "Sabah",
         "country": "AZE",
         "points": 14,
@@ -963,11 +963,11 @@
         "isSabah": true
       },
       {
-        "position": 220,
+        "position": 222,
         "club": "Zire",
         "country": "AZE",
         "points": 7,
-        "trend": "STABLE",
+        "trend": "DOWN",
         "isSabah": false
       },
       {
@@ -979,7 +979,7 @@
         "isSabah": false
       },
       {
-        "position": 297,
+        "position": 298,
         "club": "Araz-Naxçıvan",
         "country": "AZE",
         "points": 4.837,
@@ -987,7 +987,7 @@
         "isSabah": false
       },
       {
-        "position": 298,
+        "position": 299,
         "club": "Sumqayıt",
         "country": "AZE",
         "points": 4.837,
@@ -995,7 +995,7 @@
         "isSabah": false
       },
       {
-        "position": 299,
+        "position": 300,
         "club": "Gabala",
         "country": "AZE",
         "points": 4.837,

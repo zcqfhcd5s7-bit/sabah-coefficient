@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T22:04:52.609Z",
+  "generatedAt": "2026-10-16T01:07:06.517Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -848,14 +848,14 @@
     "note": "League phase in progress — match points banked so far."
   },
   "officialRanking": {
-    "position": 128,
+    "position": 131,
     "club": "Sabah",
     "country": "AZE",
     "points": 14,
     "trend": "UP",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-10-15T21:26:16+0000",
+    "lastUpdated": "2026-10-15T22:45:36+0000",
     "matchesCounted": 2,
     "seasonBreakdown": [
       {
@@ -889,31 +889,31 @@
     ],
     "neighbours": [
       {
-        "position": 125,
-        "club": "Víkingur R.",
-        "country": "ISL",
+        "position": 128,
+        "club": "Brann",
+        "country": "NOR",
         "points": 14.25,
-        "trend": "STABLE",
+        "trend": "UP",
         "isSabah": false
       },
       {
-        "position": 126,
+        "position": 129,
         "club": "Toulouse",
         "country": "FRA",
-        "points": 14.002,
-        "trend": "STABLE",
+        "points": 14.059,
+        "trend": "DOWN",
         "isSabah": false
       },
       {
-        "position": 127,
+        "position": 130,
         "club": "Nantes",
         "country": "FRA",
-        "points": 14.002,
-        "trend": "STABLE",
+        "points": 14.059,
+        "trend": "DOWN",
         "isSabah": false
       },
       {
-        "position": 128,
+        "position": 131,
         "club": "Sabah",
         "country": "AZE",
         "points": 14,
@@ -921,24 +921,24 @@
         "isSabah": true
       },
       {
-        "position": 129,
-        "club": "Beşiktaş",
-        "country": "TUR",
-        "points": 13.5,
-        "trend": "DOWN",
-        "isSabah": false
-      },
-      {
-        "position": 130,
-        "club": "Twente",
-        "country": "NED",
-        "points": 13.5,
-        "trend": "DOWN",
-        "isSabah": false
-      },
-      {
-        "position": 131,
+        "position": 132,
         "club": "Torreense",
+        "country": "POR",
+        "points": 13.31,
+        "trend": "DOWN",
+        "isSabah": false
+      },
+      {
+        "position": 133,
+        "club": "Santa Clara",
+        "country": "POR",
+        "points": 13.31,
+        "trend": "DOWN",
+        "isSabah": false
+      },
+      {
+        "position": 134,
+        "club": "Arouca",
         "country": "POR",
         "points": 13.31,
         "trend": "DOWN",
@@ -955,7 +955,7 @@
         "isSabah": false
       },
       {
-        "position": 128,
+        "position": 131,
         "club": "Sabah",
         "country": "AZE",
         "points": 14,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T07:35:34.891Z",
+  "generatedAt": "2026-10-19T15:27:44.166Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -852,10 +852,10 @@
     "club": "Sabah",
     "country": "AZE",
     "points": 14,
-    "trend": "UP",
+    "trend": "STABLE",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-10-16T08:21:41+0000",
+    "lastUpdated": "2026-10-19T09:12:09+0000",
     "matchesCounted": 2,
     "seasonBreakdown": [
       {
@@ -893,7 +893,7 @@
         "club": "Brann",
         "country": "NOR",
         "points": 14.25,
-        "trend": "UP",
+        "trend": "STABLE",
         "isSabah": false
       },
       {
@@ -901,7 +901,7 @@
         "club": "Toulouse",
         "country": "FRA",
         "points": 14.059,
-        "trend": "DOWN",
+        "trend": "STABLE",
         "isSabah": false
       },
       {
@@ -909,7 +909,7 @@
         "club": "Nantes",
         "country": "FRA",
         "points": 14.059,
-        "trend": "DOWN",
+        "trend": "STABLE",
         "isSabah": false
       },
       {
@@ -917,7 +917,7 @@
         "club": "Sabah",
         "country": "AZE",
         "points": 14,
-        "trend": "UP",
+        "trend": "STABLE",
         "isSabah": true
       },
       {
@@ -925,7 +925,7 @@
         "club": "Torreense",
         "country": "POR",
         "points": 13.31,
-        "trend": "DOWN",
+        "trend": "STABLE",
         "isSabah": false
       },
       {
@@ -933,7 +933,7 @@
         "club": "Santa Clara",
         "country": "POR",
         "points": 13.31,
-        "trend": "DOWN",
+        "trend": "STABLE",
         "isSabah": false
       },
       {
@@ -941,7 +941,7 @@
         "club": "Arouca",
         "country": "POR",
         "points": 13.31,
-        "trend": "DOWN",
+        "trend": "STABLE",
         "isSabah": false
       }
     ],
@@ -951,7 +951,7 @@
         "club": "Qarabağ",
         "country": "AZE",
         "points": 36.25,
-        "trend": "DOWN",
+        "trend": "STABLE",
         "isSabah": false
       },
       {
@@ -959,7 +959,7 @@
         "club": "Sabah",
         "country": "AZE",
         "points": 14,
-        "trend": "UP",
+        "trend": "STABLE",
         "isSabah": true
       },
       {
@@ -967,7 +967,7 @@
         "club": "Zire",
         "country": "AZE",
         "points": 7,
-        "trend": "DOWN",
+        "trend": "STABLE",
         "isSabah": false
       },
       {
@@ -983,7 +983,7 @@
         "club": "Araz-Naxçıvan",
         "country": "AZE",
         "points": 4.837,
-        "trend": "UP",
+        "trend": "STABLE",
         "isSabah": false
       },
       {
@@ -991,7 +991,7 @@
         "club": "Sumqayıt",
         "country": "AZE",
         "points": 4.837,
-        "trend": "UP",
+        "trend": "STABLE",
         "isSabah": false
       },
       {
@@ -999,7 +999,7 @@
         "club": "Gabala",
         "country": "AZE",
         "points": 4.837,
-        "trend": "UP",
+        "trend": "STABLE",
         "isSabah": false
       }
     ]

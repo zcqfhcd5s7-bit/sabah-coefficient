@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T16:43:09.145Z",
+  "generatedAt": "2026-10-20T20:23:49.595Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -585,24 +585,46 @@
       "leg": null,
       "kickOff": "2026-10-20T16:45:00Z",
       "date": "2026-10-20",
-      "status": "UPCOMING",
+      "status": "FINISHED",
       "isHome": true,
       "homeTeam": "Sabah",
       "awayTeam": "B. Dortmund",
       "homeCountry": "AZE",
       "awayCountry": "GER",
-      "homeScore": null,
-      "awayScore": null,
-      "regular": null,
+      "homeScore": 1,
+      "awayScore": 2,
+      "regular": {
+        "away": 2,
+        "home": 1
+      },
       "aggregate": null,
-      "outcome": null,
+      "outcome": "loss",
       "opponent": "B. Dortmund",
       "opponentCountry": "GER",
       "venueCity": "Baku",
       "venueName": "Baku Olympic Stadium",
       "tieWinnerId": null,
       "tieWinnerText": null,
-      "scorers": []
+      "scorers": [
+        {
+          "player": "Guirassy",
+          "minute": 10,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "McCarthy",
+          "minute": 39,
+          "forSabah": true,
+          "type": "SCORED"
+        },
+        {
+          "player": "Guirassy",
+          "minute": 53,
+          "forSabah": false,
+          "type": "SCORED"
+        }
+      ]
     },
     {
       "id": "2049624",
@@ -751,51 +773,6 @@
     }
   ],
   "lastResult": {
-    "id": "2049579",
-    "competition": "UCL",
-    "roundName": "League phase",
-    "roundType": "GROUP_STANDINGS",
-    "roundMode": "GROUP",
-    "matchdayNo": 2,
-    "leg": null,
-    "kickOff": "2026-10-13T16:45:00Z",
-    "date": "2026-10-13",
-    "status": "FINISHED",
-    "isHome": true,
-    "homeTeam": "Sabah",
-    "awayTeam": "Slavia Praha",
-    "homeCountry": "AZE",
-    "awayCountry": "CZE",
-    "homeScore": 2,
-    "awayScore": 0,
-    "regular": {
-      "away": 0,
-      "home": 2
-    },
-    "aggregate": null,
-    "outcome": "win",
-    "opponent": "Slavia Praha",
-    "opponentCountry": "CZE",
-    "venueCity": "Baku",
-    "venueName": "Baku Olympic Stadium",
-    "tieWinnerId": null,
-    "tieWinnerText": null,
-    "scorers": [
-      {
-        "player": "Parris",
-        "minute": 49,
-        "forSabah": true,
-        "type": "SCORED"
-      },
-      {
-        "player": "Mickels",
-        "minute": 88,
-        "forSabah": true,
-        "type": "SCORED"
-      }
-    ]
-  },
-  "nextMatch": {
     "id": "2049597",
     "competition": "UCL",
     "roundName": "League phase",
@@ -805,21 +782,72 @@
     "leg": null,
     "kickOff": "2026-10-20T16:45:00Z",
     "date": "2026-10-20",
-    "status": "UPCOMING",
+    "status": "FINISHED",
     "isHome": true,
     "homeTeam": "Sabah",
     "awayTeam": "B. Dortmund",
     "homeCountry": "AZE",
     "awayCountry": "GER",
+    "homeScore": 1,
+    "awayScore": 2,
+    "regular": {
+      "away": 2,
+      "home": 1
+    },
+    "aggregate": null,
+    "outcome": "loss",
+    "opponent": "B. Dortmund",
+    "opponentCountry": "GER",
+    "venueCity": "Baku",
+    "venueName": "Baku Olympic Stadium",
+    "tieWinnerId": null,
+    "tieWinnerText": null,
+    "scorers": [
+      {
+        "player": "Guirassy",
+        "minute": 10,
+        "forSabah": false,
+        "type": "SCORED"
+      },
+      {
+        "player": "McCarthy",
+        "minute": 39,
+        "forSabah": true,
+        "type": "SCORED"
+      },
+      {
+        "player": "Guirassy",
+        "minute": 53,
+        "forSabah": false,
+        "type": "SCORED"
+      }
+    ]
+  },
+  "nextMatch": {
+    "id": "2049624",
+    "competition": "UCL",
+    "roundName": "League phase",
+    "roundType": "GROUP_STANDINGS",
+    "roundMode": "GROUP",
+    "matchdayNo": 4,
+    "leg": null,
+    "kickOff": "2026-11-04T20:00:00Z",
+    "date": "2026-11-04",
+    "status": "UPCOMING",
+    "isHome": false,
+    "homeTeam": "Viking",
+    "awayTeam": "Sabah",
+    "homeCountry": "NOR",
+    "awayCountry": "AZE",
     "homeScore": null,
     "awayScore": null,
     "regular": null,
     "aggregate": null,
     "outcome": null,
-    "opponent": "B. Dortmund",
-    "opponentCountry": "GER",
-    "venueCity": "Baku",
-    "venueName": "Baku Olympic Stadium",
+    "opponent": "Viking",
+    "opponentCountry": "NOR",
+    "venueCity": "Stavanger",
+    "venueName": "Viking Stadion",
     "tieWinnerId": null,
     "tieWinnerText": null,
     "scorers": []
@@ -829,12 +857,12 @@
     "reachedLeaguePhase": true,
     "eliminatedAt": null,
     "leaguePhase": {
-      "played": 2,
+      "played": 3,
       "total": 8,
-      "remaining": 6,
+      "remaining": 5,
       "wins": 1,
       "draws": 0,
-      "losses": 1,
+      "losses": 2,
       "matchPoints": 2
     },
     "guaranteedMinimum": 0,
@@ -855,15 +883,15 @@
     "trend": "STABLE",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-10-19T09:12:09+0000",
-    "matchesCounted": 2,
+    "lastUpdated": "2026-10-20T18:36:45+0000",
+    "matchesCounted": 3,
     "seasonBreakdown": [
       {
         "season": 2027,
         "points": 8,
         "bonus": 6,
-        "matches": 2,
-        "seasonPosition": 20
+        "matches": 3,
+        "seasonPosition": 21
       },
       {
         "season": 2026,

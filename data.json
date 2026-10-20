@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T20:23:49.595Z",
+  "generatedAt": "2026-10-20T23:44:11.624Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -883,7 +883,7 @@
     "trend": "STABLE",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-10-20T18:36:45+0000",
+    "lastUpdated": "2026-10-20T20:56:26+0000",
     "matchesCounted": 3,
     "seasonBreakdown": [
       {
@@ -891,7 +891,7 @@
         "points": 8,
         "bonus": 6,
         "matches": 3,
-        "seasonPosition": 21
+        "seasonPosition": 24
       },
       {
         "season": 2026,
@@ -928,7 +928,7 @@
         "position": 129,
         "club": "Toulouse",
         "country": "FRA",
-        "points": 14.059,
+        "points": 14.116,
         "trend": "STABLE",
         "isSabah": false
       },
@@ -936,7 +936,7 @@
         "position": 130,
         "club": "Nantes",
         "country": "FRA",
-        "points": 14.059,
+        "points": 14.116,
         "trend": "STABLE",
         "isSabah": false
       },

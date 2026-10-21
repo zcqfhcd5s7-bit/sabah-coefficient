@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T15:04:49.067Z",
+  "generatedAt": "2026-10-21T20:00:59.575Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -883,7 +883,7 @@
     "trend": "STABLE",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-10-20T20:56:26+0000",
+    "lastUpdated": "2026-10-21T18:38:12+0000",
     "matchesCounted": 3,
     "seasonBreakdown": [
       {
@@ -891,7 +891,7 @@
         "points": 8,
         "bonus": 6,
         "matches": 3,
-        "seasonPosition": 24
+        "seasonPosition": 26
       },
       {
         "season": 2026,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T15:05:43.885Z",
+  "generatedAt": "2026-10-22T19:54:38.095Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -883,7 +883,7 @@
     "trend": "STABLE",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-10-21T20:58:28+0000",
+    "lastUpdated": "2026-10-22T18:48:11+0000",
     "matchesCounted": 3,
     "seasonBreakdown": [
       {
@@ -918,17 +918,17 @@
     "neighbours": [
       {
         "position": 128,
-        "club": "Brann",
-        "country": "NOR",
+        "club": "Víkingur R.",
+        "country": "ISL",
         "points": 14.25,
-        "trend": "STABLE",
+        "trend": "DOWN",
         "isSabah": false
       },
       {
         "position": 129,
         "club": "Toulouse",
         "country": "FRA",
-        "points": 14.116,
+        "points": 14.144,
         "trend": "STABLE",
         "isSabah": false
       },
@@ -936,7 +936,7 @@
         "position": 130,
         "club": "Nantes",
         "country": "FRA",
-        "points": 14.116,
+        "points": 14.144,
         "trend": "STABLE",
         "isSabah": false
       },
@@ -999,35 +999,35 @@
         "isSabah": false
       },
       {
-        "position": 265,
+        "position": 266,
         "club": "Neftchi",
         "country": "AZE",
         "points": 5.5,
-        "trend": "STABLE",
-        "isSabah": false
-      },
-      {
-        "position": 298,
-        "club": "Araz-Naxçıvan",
-        "country": "AZE",
-        "points": 4.837,
-        "trend": "STABLE",
+        "trend": "DOWN",
         "isSabah": false
       },
       {
         "position": 299,
-        "club": "Sumqayıt",
+        "club": "Araz-Naxçıvan",
         "country": "AZE",
         "points": 4.837,
-        "trend": "STABLE",
+        "trend": "DOWN",
         "isSabah": false
       },
       {
         "position": 300,
+        "club": "Sumqayıt",
+        "country": "AZE",
+        "points": 4.837,
+        "trend": "DOWN",
+        "isSabah": false
+      },
+      {
+        "position": 301,
         "club": "Gabala",
         "country": "AZE",
         "points": 4.837,
-        "trend": "STABLE",
+        "trend": "DOWN",
         "isSabah": false
       }
     ]

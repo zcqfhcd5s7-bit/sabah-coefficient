@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T19:54:38.095Z",
+  "generatedAt": "2026-10-22T23:09:58.271Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -883,7 +883,7 @@
     "trend": "STABLE",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-10-22T18:48:11+0000",
+    "lastUpdated": "2026-10-22T20:57:27+0000",
     "matchesCounted": 3,
     "seasonBreakdown": [
       {
@@ -928,7 +928,7 @@
         "position": 129,
         "club": "Toulouse",
         "country": "FRA",
-        "points": 14.144,
+        "points": 14.202,
         "trend": "STABLE",
         "isSabah": false
       },
@@ -936,7 +936,7 @@
         "position": 130,
         "club": "Nantes",
         "country": "FRA",
-        "points": 14.144,
+        "points": 14.202,
         "trend": "STABLE",
         "isSabah": false
       },
@@ -958,28 +958,28 @@
       },
       {
         "position": 133,
-        "club": "Torreense",
-        "country": "POR",
-        "points": 13.31,
-        "trend": "DOWN",
+        "club": "Borac",
+        "country": "BIH",
+        "points": 13.625,
+        "trend": "UP",
         "isSabah": false
       },
       {
         "position": 134,
-        "club": "Santa Clara",
+        "club": "Torreense",
         "country": "POR",
-        "points": 13.31,
+        "points": 13.47,
         "trend": "DOWN",
         "isSabah": false
       }
     ],
     "association": [
       {
-        "position": 60,
+        "position": 61,
         "club": "Qarabağ",
         "country": "AZE",
         "points": 36.25,
-        "trend": "STABLE",
+        "trend": "DOWN",
         "isSabah": false
       },
       {
@@ -999,7 +999,7 @@
         "isSabah": false
       },
       {
-        "position": 266,
+        "position": 267,
         "club": "Neftchi",
         "country": "AZE",
         "points": 5.5,

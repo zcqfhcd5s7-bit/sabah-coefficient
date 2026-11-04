@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T16:59:33.977Z",
+  "generatedAt": "2026-11-04T22:33:19.327Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -636,24 +636,58 @@
       "leg": null,
       "kickOff": "2026-11-04T20:00:00Z",
       "date": "2026-11-04",
-      "status": "UPCOMING",
+      "status": "FINISHED",
       "isHome": false,
       "homeTeam": "Viking",
       "awayTeam": "Sabah",
       "homeCountry": "NOR",
       "awayCountry": "AZE",
-      "homeScore": null,
-      "awayScore": null,
-      "regular": null,
+      "homeScore": 4,
+      "awayScore": 1,
+      "regular": {
+        "away": 1,
+        "home": 4
+      },
       "aggregate": null,
-      "outcome": null,
+      "outcome": "loss",
       "opponent": "Viking",
       "opponentCountry": "NOR",
       "venueCity": "Stavanger",
       "venueName": "Viking Stadion",
       "tieWinnerId": null,
       "tieWinnerText": null,
-      "scorers": []
+      "scorers": [
+        {
+          "player": "Mbina",
+          "minute": 11,
+          "forSabah": true,
+          "type": "SCORED"
+        },
+        {
+          "player": "Botheim",
+          "minute": 27,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "Tripić",
+          "minute": 69,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "Falchener",
+          "minute": 81,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "Botheim",
+          "minute": 90,
+          "forSabah": false,
+          "type": "SCORED"
+        }
+      ]
     },
     {
       "id": "2049642",
@@ -773,57 +807,6 @@
     }
   ],
   "lastResult": {
-    "id": "2049597",
-    "competition": "UCL",
-    "roundName": "League phase",
-    "roundType": "GROUP_STANDINGS",
-    "roundMode": "GROUP",
-    "matchdayNo": 3,
-    "leg": null,
-    "kickOff": "2026-10-20T16:45:00Z",
-    "date": "2026-10-20",
-    "status": "FINISHED",
-    "isHome": true,
-    "homeTeam": "Sabah",
-    "awayTeam": "B. Dortmund",
-    "homeCountry": "AZE",
-    "awayCountry": "GER",
-    "homeScore": 1,
-    "awayScore": 2,
-    "regular": {
-      "away": 2,
-      "home": 1
-    },
-    "aggregate": null,
-    "outcome": "loss",
-    "opponent": "B. Dortmund",
-    "opponentCountry": "GER",
-    "venueCity": "Baku",
-    "venueName": "Baku Olympic Stadium",
-    "tieWinnerId": null,
-    "tieWinnerText": null,
-    "scorers": [
-      {
-        "player": "Guirassy",
-        "minute": 10,
-        "forSabah": false,
-        "type": "SCORED"
-      },
-      {
-        "player": "McCarthy",
-        "minute": 39,
-        "forSabah": true,
-        "type": "SCORED"
-      },
-      {
-        "player": "Guirassy",
-        "minute": 53,
-        "forSabah": false,
-        "type": "SCORED"
-      }
-    ]
-  },
-  "nextMatch": {
     "id": "2049624",
     "competition": "UCL",
     "roundName": "League phase",
@@ -833,21 +816,84 @@
     "leg": null,
     "kickOff": "2026-11-04T20:00:00Z",
     "date": "2026-11-04",
-    "status": "UPCOMING",
+    "status": "FINISHED",
     "isHome": false,
     "homeTeam": "Viking",
     "awayTeam": "Sabah",
     "homeCountry": "NOR",
     "awayCountry": "AZE",
+    "homeScore": 4,
+    "awayScore": 1,
+    "regular": {
+      "away": 1,
+      "home": 4
+    },
+    "aggregate": null,
+    "outcome": "loss",
+    "opponent": "Viking",
+    "opponentCountry": "NOR",
+    "venueCity": "Stavanger",
+    "venueName": "Viking Stadion",
+    "tieWinnerId": null,
+    "tieWinnerText": null,
+    "scorers": [
+      {
+        "player": "Mbina",
+        "minute": 11,
+        "forSabah": true,
+        "type": "SCORED"
+      },
+      {
+        "player": "Botheim",
+        "minute": 27,
+        "forSabah": false,
+        "type": "SCORED"
+      },
+      {
+        "player": "Tripić",
+        "minute": 69,
+        "forSabah": false,
+        "type": "SCORED"
+      },
+      {
+        "player": "Falchener",
+        "minute": 81,
+        "forSabah": false,
+        "type": "SCORED"
+      },
+      {
+        "player": "Botheim",
+        "minute": 90,
+        "forSabah": false,
+        "type": "SCORED"
+      }
+    ]
+  },
+  "nextMatch": {
+    "id": "2049642",
+    "competition": "UCL",
+    "roundName": "League phase",
+    "roundType": "GROUP_STANDINGS",
+    "roundMode": "GROUP",
+    "matchdayNo": 5,
+    "leg": null,
+    "kickOff": "2026-11-25T17:45:00Z",
+    "date": "2026-11-25",
+    "status": "UPCOMING",
+    "isHome": true,
+    "homeTeam": "Sabah",
+    "awayTeam": "Barcelona",
+    "homeCountry": "AZE",
+    "awayCountry": "ESP",
     "homeScore": null,
     "awayScore": null,
     "regular": null,
     "aggregate": null,
     "outcome": null,
-    "opponent": "Viking",
-    "opponentCountry": "NOR",
-    "venueCity": "Stavanger",
-    "venueName": "Viking Stadion",
+    "opponent": "Barcelona",
+    "opponentCountry": "ESP",
+    "venueCity": "Baku",
+    "venueName": "Baku Olympic Stadium",
     "tieWinnerId": null,
     "tieWinnerText": null,
     "scorers": []
@@ -857,12 +903,12 @@
     "reachedLeaguePhase": true,
     "eliminatedAt": null,
     "leaguePhase": {
-      "played": 3,
+      "played": 4,
       "total": 8,
-      "remaining": 5,
+      "remaining": 4,
       "wins": 1,
       "draws": 0,
-      "losses": 2,
+      "losses": 3,
       "matchPoints": 2
     },
     "guaranteedMinimum": 0,
@@ -883,15 +929,15 @@
     "trend": "DOWN",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-11-03T21:55:02+0000",
-    "matchesCounted": 3,
+    "lastUpdated": "2026-11-04T21:56:39+0000",
+    "matchesCounted": 4,
     "seasonBreakdown": [
       {
         "season": 2027,
         "points": 8,
         "bonus": 6,
-        "matches": 3,
-        "seasonPosition": 29
+        "matches": 4,
+        "seasonPosition": 31
       },
       {
         "season": 2026,
@@ -920,7 +966,7 @@
         "position": 129,
         "club": "Toulouse",
         "country": "FRA",
-        "points": 14.287,
+        "points": 14.316,
         "trend": "STABLE",
         "isSabah": false
       },
@@ -928,7 +974,7 @@
         "position": 130,
         "club": "Nantes",
         "country": "FRA",
-        "points": 14.287,
+        "points": 14.316,
         "trend": "STABLE",
         "isSabah": false
       },
@@ -950,26 +996,26 @@
       },
       {
         "position": 133,
-        "club": "Borac",
-        "country": "BIH",
-        "points": 13.625,
-        "trend": "STABLE",
+        "club": "Torreense",
+        "country": "POR",
+        "points": 13.63,
+        "trend": "UP",
         "isSabah": false
       },
       {
         "position": 134,
-        "club": "Torreense",
+        "club": "Santa Clara",
         "country": "POR",
-        "points": 13.55,
-        "trend": "STABLE",
+        "points": 13.63,
+        "trend": "UP",
         "isSabah": false
       },
       {
         "position": 135,
-        "club": "Santa Clara",
+        "club": "Arouca",
         "country": "POR",
-        "points": 13.55,
-        "trend": "STABLE",
+        "points": 13.63,
+        "trend": "UP",
         "isSabah": false
       }
     ],

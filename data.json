@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T20:53:13.682Z",
+  "generatedAt": "2026-11-04T01:09:55.842Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -876,14 +876,14 @@
     "note": "League phase in progress — match points banked so far."
   },
   "officialRanking": {
-    "position": 131,
+    "position": 132,
     "club": "Sabah",
     "country": "AZE",
     "points": 14,
-    "trend": "STABLE",
+    "trend": "DOWN",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-11-03T19:40:12+0000",
+    "lastUpdated": "2026-11-03T21:55:02+0000",
     "matchesCounted": 3,
     "seasonBreakdown": [
       {
@@ -891,7 +891,7 @@
         "points": 8,
         "bonus": 6,
         "matches": 3,
-        "seasonPosition": 27
+        "seasonPosition": 29
       },
       {
         "season": 2026,
@@ -917,18 +917,10 @@
     ],
     "neighbours": [
       {
-        "position": 128,
-        "club": "Víkingur R.",
-        "country": "ISL",
-        "points": 14.25,
-        "trend": "STABLE",
-        "isSabah": false
-      },
-      {
         "position": 129,
         "club": "Toulouse",
         "country": "FRA",
-        "points": 14.202,
+        "points": 14.287,
         "trend": "STABLE",
         "isSabah": false
       },
@@ -936,25 +928,25 @@
         "position": 130,
         "club": "Nantes",
         "country": "FRA",
-        "points": 14.202,
+        "points": 14.287,
         "trend": "STABLE",
         "isSabah": false
       },
       {
         "position": 131,
-        "club": "Sabah",
-        "country": "AZE",
-        "points": 14,
-        "trend": "STABLE",
-        "isSabah": true
+        "club": "Víkingur R.",
+        "country": "ISL",
+        "points": 14.25,
+        "trend": "DOWN",
+        "isSabah": false
       },
       {
         "position": 132,
-        "club": "LASK",
-        "country": "AUT",
+        "club": "Sabah",
+        "country": "AZE",
         "points": 14,
-        "trend": "STABLE",
-        "isSabah": false
+        "trend": "DOWN",
+        "isSabah": true
       },
       {
         "position": 133,
@@ -971,6 +963,14 @@
         "points": 13.55,
         "trend": "STABLE",
         "isSabah": false
+      },
+      {
+        "position": 135,
+        "club": "Santa Clara",
+        "country": "POR",
+        "points": 13.55,
+        "trend": "STABLE",
+        "isSabah": false
       }
     ],
     "association": [
@@ -983,11 +983,11 @@
         "isSabah": false
       },
       {
-        "position": 131,
+        "position": 132,
         "club": "Sabah",
         "country": "AZE",
         "points": 14,
-        "trend": "STABLE",
+        "trend": "DOWN",
         "isSabah": true
       },
       {

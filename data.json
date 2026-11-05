@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T12:04:34.756Z",
+  "generatedAt": "2026-11-05T20:32:38.881Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -929,7 +929,7 @@
     "trend": "DOWN",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-11-04T21:56:39+0000",
+    "lastUpdated": "2026-11-05T19:50:49+0000",
     "matchesCounted": 4,
     "seasonBreakdown": [
       {
@@ -937,7 +937,7 @@
         "points": 8,
         "bonus": 6,
         "matches": 4,
-        "seasonPosition": 31
+        "seasonPosition": 32
       },
       {
         "season": 2026,
@@ -966,7 +966,7 @@
         "position": 129,
         "club": "Toulouse",
         "country": "FRA",
-        "points": 14.316,
+        "points": 14.344,
         "trend": "STABLE",
         "isSabah": false
       },
@@ -974,7 +974,7 @@
         "position": 130,
         "club": "Nantes",
         "country": "FRA",
-        "points": 14.316,
+        "points": 14.344,
         "trend": "STABLE",
         "isSabah": false
       },
@@ -998,7 +998,7 @@
         "position": 133,
         "club": "Torreense",
         "country": "POR",
-        "points": 13.63,
+        "points": 13.67,
         "trend": "UP",
         "isSabah": false
       },
@@ -1006,7 +1006,7 @@
         "position": 134,
         "club": "Santa Clara",
         "country": "POR",
-        "points": 13.63,
+        "points": 13.67,
         "trend": "UP",
         "isSabah": false
       },
@@ -1014,7 +1014,7 @@
         "position": 135,
         "club": "Arouca",
         "country": "POR",
-        "points": 13.63,
+        "points": 13.67,
         "trend": "UP",
         "isSabah": false
       }

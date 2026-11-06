@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T20:32:38.881Z",
+  "generatedAt": "2026-11-06T01:27:13.195Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -929,7 +929,7 @@
     "trend": "DOWN",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-11-05T19:50:49+0000",
+    "lastUpdated": "2026-11-05T21:57:47+0000",
     "matchesCounted": 4,
     "seasonBreakdown": [
       {
@@ -937,7 +937,7 @@
         "points": 8,
         "bonus": 6,
         "matches": 4,
-        "seasonPosition": 32
+        "seasonPosition": 33
       },
       {
         "season": 2026,
@@ -966,7 +966,7 @@
         "position": 129,
         "club": "Toulouse",
         "country": "FRA",
-        "points": 14.344,
+        "points": 14.459,
         "trend": "STABLE",
         "isSabah": false
       },
@@ -974,7 +974,7 @@
         "position": 130,
         "club": "Nantes",
         "country": "FRA",
-        "points": 14.344,
+        "points": 14.459,
         "trend": "STABLE",
         "isSabah": false
       },
@@ -996,26 +996,26 @@
       },
       {
         "position": 133,
-        "club": "Torreense",
-        "country": "POR",
-        "points": 13.67,
+        "club": "Univ. Craiova",
+        "country": "ROU",
+        "points": 14,
         "trend": "UP",
         "isSabah": false
       },
       {
         "position": 134,
-        "club": "Santa Clara",
+        "club": "Torreense",
         "country": "POR",
-        "points": 13.67,
-        "trend": "UP",
+        "points": 13.83,
+        "trend": "STABLE",
         "isSabah": false
       },
       {
         "position": 135,
-        "club": "Arouca",
+        "club": "Santa Clara",
         "country": "POR",
-        "points": 13.67,
-        "trend": "UP",
+        "points": 13.83,
+        "trend": "STABLE",
         "isSabah": false
       }
     ],
@@ -1045,11 +1045,11 @@
         "isSabah": false
       },
       {
-        "position": 267,
+        "position": 269,
         "club": "Neftchi",
         "country": "AZE",
         "points": 5.5,
-        "trend": "STABLE",
+        "trend": "DOWN",
         "isSabah": false
       },
       {

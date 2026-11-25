@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T12:29:04.258Z",
+  "generatedAt": "2026-11-25T22:19:10.108Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -699,24 +699,58 @@
       "leg": null,
       "kickOff": "2026-11-25T17:45:00Z",
       "date": "2026-11-25",
-      "status": "UPCOMING",
+      "status": "FINISHED",
       "isHome": true,
       "homeTeam": "Sabah",
       "awayTeam": "Barcelona",
       "homeCountry": "AZE",
       "awayCountry": "ESP",
-      "homeScore": null,
-      "awayScore": null,
-      "regular": null,
+      "homeScore": 1,
+      "awayScore": 4,
+      "regular": {
+        "away": 4,
+        "home": 1
+      },
       "aggregate": null,
-      "outcome": null,
+      "outcome": "loss",
       "opponent": "Barcelona",
       "opponentCountry": "ESP",
       "venueCity": "Baku",
       "venueName": "Baku Olympic Stadium",
       "tieWinnerId": null,
       "tieWinnerText": null,
-      "scorers": []
+      "scorers": [
+        {
+          "player": "Gordon",
+          "minute": 31,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "Gordon",
+          "minute": 51,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "Adeyemi",
+          "minute": 55,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "Jesus",
+          "minute": 60,
+          "forSabah": false,
+          "type": "SCORED"
+        },
+        {
+          "player": "Mickels",
+          "minute": 63,
+          "forSabah": true,
+          "type": "SCORED"
+        }
+      ]
     },
     {
       "id": "2049649",
@@ -807,69 +841,6 @@
     }
   ],
   "lastResult": {
-    "id": "2049624",
-    "competition": "UCL",
-    "roundName": "League phase",
-    "roundType": "GROUP_STANDINGS",
-    "roundMode": "GROUP",
-    "matchdayNo": 4,
-    "leg": null,
-    "kickOff": "2026-11-04T20:00:00Z",
-    "date": "2026-11-04",
-    "status": "FINISHED",
-    "isHome": false,
-    "homeTeam": "Viking",
-    "awayTeam": "Sabah",
-    "homeCountry": "NOR",
-    "awayCountry": "AZE",
-    "homeScore": 4,
-    "awayScore": 1,
-    "regular": {
-      "away": 1,
-      "home": 4
-    },
-    "aggregate": null,
-    "outcome": "loss",
-    "opponent": "Viking",
-    "opponentCountry": "NOR",
-    "venueCity": "Stavanger",
-    "venueName": "Viking Stadion",
-    "tieWinnerId": null,
-    "tieWinnerText": null,
-    "scorers": [
-      {
-        "player": "Mbina",
-        "minute": 11,
-        "forSabah": true,
-        "type": "SCORED"
-      },
-      {
-        "player": "Botheim",
-        "minute": 27,
-        "forSabah": false,
-        "type": "SCORED"
-      },
-      {
-        "player": "Tripić",
-        "minute": 69,
-        "forSabah": false,
-        "type": "SCORED"
-      },
-      {
-        "player": "Falchener",
-        "minute": 81,
-        "forSabah": false,
-        "type": "SCORED"
-      },
-      {
-        "player": "Botheim",
-        "minute": 90,
-        "forSabah": false,
-        "type": "SCORED"
-      }
-    ]
-  },
-  "nextMatch": {
     "id": "2049642",
     "competition": "UCL",
     "roundName": "League phase",
@@ -879,21 +850,84 @@
     "leg": null,
     "kickOff": "2026-11-25T17:45:00Z",
     "date": "2026-11-25",
-    "status": "UPCOMING",
+    "status": "FINISHED",
     "isHome": true,
     "homeTeam": "Sabah",
     "awayTeam": "Barcelona",
     "homeCountry": "AZE",
     "awayCountry": "ESP",
+    "homeScore": 1,
+    "awayScore": 4,
+    "regular": {
+      "away": 4,
+      "home": 1
+    },
+    "aggregate": null,
+    "outcome": "loss",
+    "opponent": "Barcelona",
+    "opponentCountry": "ESP",
+    "venueCity": "Baku",
+    "venueName": "Baku Olympic Stadium",
+    "tieWinnerId": null,
+    "tieWinnerText": null,
+    "scorers": [
+      {
+        "player": "Gordon",
+        "minute": 31,
+        "forSabah": false,
+        "type": "SCORED"
+      },
+      {
+        "player": "Gordon",
+        "minute": 51,
+        "forSabah": false,
+        "type": "SCORED"
+      },
+      {
+        "player": "Adeyemi",
+        "minute": 55,
+        "forSabah": false,
+        "type": "SCORED"
+      },
+      {
+        "player": "Jesus",
+        "minute": 60,
+        "forSabah": false,
+        "type": "SCORED"
+      },
+      {
+        "player": "Mickels",
+        "minute": 63,
+        "forSabah": true,
+        "type": "SCORED"
+      }
+    ]
+  },
+  "nextMatch": {
+    "id": "2049649",
+    "competition": "UCL",
+    "roundName": "League phase",
+    "roundType": "GROUP_STANDINGS",
+    "roundMode": "GROUP",
+    "matchdayNo": 6,
+    "leg": null,
+    "kickOff": "2026-12-08T17:45:00Z",
+    "date": "2026-12-08",
+    "status": "UPCOMING",
+    "isHome": false,
+    "homeTeam": "Villarreal",
+    "awayTeam": "Sabah",
+    "homeCountry": "ESP",
+    "awayCountry": "AZE",
     "homeScore": null,
     "awayScore": null,
     "regular": null,
     "aggregate": null,
     "outcome": null,
-    "opponent": "Barcelona",
+    "opponent": "Villarreal",
     "opponentCountry": "ESP",
-    "venueCity": "Baku",
-    "venueName": "Baku Olympic Stadium",
+    "venueCity": "Villarreal",
+    "venueName": "Estadio de la Cerámica",
     "tieWinnerId": null,
     "tieWinnerText": null,
     "scorers": []
@@ -903,12 +937,12 @@
     "reachedLeaguePhase": true,
     "eliminatedAt": null,
     "leaguePhase": {
-      "played": 4,
+      "played": 5,
       "total": 8,
-      "remaining": 4,
+      "remaining": 3,
       "wins": 1,
       "draws": 0,
-      "losses": 3,
+      "losses": 4,
       "matchPoints": 2
     },
     "guaranteedMinimum": 0,
@@ -929,15 +963,15 @@
     "trend": "STABLE",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-11-24T21:56:25+0000",
-    "matchesCounted": 4,
+    "lastUpdated": "2026-11-25T21:55:03+0000",
+    "matchesCounted": 5,
     "seasonBreakdown": [
       {
         "season": 2027,
         "points": 8,
         "bonus": 6,
-        "matches": 4,
-        "seasonPosition": 34
+        "matches": 5,
+        "seasonPosition": 35
       },
       {
         "season": 2026,
@@ -964,18 +998,18 @@
     "neighbours": [
       {
         "position": 129,
-        "club": "Toulouse",
-        "country": "FRA",
-        "points": 14.459,
-        "trend": "STABLE",
+        "club": "Dynamo Kyiv",
+        "country": "UKR",
+        "points": 14.5,
+        "trend": "DOWN",
         "isSabah": false
       },
       {
         "position": 130,
-        "club": "Nantes",
-        "country": "FRA",
-        "points": 14.459,
-        "trend": "STABLE",
+        "club": "Maccabi Haifa",
+        "country": "ISR",
+        "points": 14.5,
+        "trend": "DOWN",
         "isSabah": false
       },
       {
@@ -1006,7 +1040,7 @@
         "position": 134,
         "club": "Torreense",
         "country": "POR",
-        "points": 13.91,
+        "points": 13.95,
         "trend": "STABLE",
         "isSabah": false
       },
@@ -1014,7 +1048,7 @@
         "position": 135,
         "club": "Santa Clara",
         "country": "POR",
-        "points": 13.91,
+        "points": 13.95,
         "trend": "STABLE",
         "isSabah": false
       }

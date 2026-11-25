@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T17:24:57.376Z",
+  "generatedAt": "2026-11-25T02:09:57.404Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -926,10 +926,10 @@
     "club": "Sabah",
     "country": "AZE",
     "points": 14,
-    "trend": "DOWN",
+    "trend": "STABLE",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-11-05T21:57:47+0000",
+    "lastUpdated": "2026-11-24T21:56:25+0000",
     "matchesCounted": 4,
     "seasonBreakdown": [
       {
@@ -937,7 +937,7 @@
         "points": 8,
         "bonus": 6,
         "matches": 4,
-        "seasonPosition": 33
+        "seasonPosition": 34
       },
       {
         "season": 2026,
@@ -983,7 +983,7 @@
         "club": "Víkingur R.",
         "country": "ISL",
         "points": 14.25,
-        "trend": "DOWN",
+        "trend": "STABLE",
         "isSabah": false
       },
       {
@@ -991,7 +991,7 @@
         "club": "Sabah",
         "country": "AZE",
         "points": 14,
-        "trend": "DOWN",
+        "trend": "STABLE",
         "isSabah": true
       },
       {
@@ -999,14 +999,14 @@
         "club": "Univ. Craiova",
         "country": "ROU",
         "points": 14,
-        "trend": "UP",
+        "trend": "STABLE",
         "isSabah": false
       },
       {
         "position": 134,
         "club": "Torreense",
         "country": "POR",
-        "points": 13.83,
+        "points": 13.91,
         "trend": "STABLE",
         "isSabah": false
       },
@@ -1014,7 +1014,7 @@
         "position": 135,
         "club": "Santa Clara",
         "country": "POR",
-        "points": 13.83,
+        "points": 13.91,
         "trend": "STABLE",
         "isSabah": false
       }
@@ -1033,7 +1033,7 @@
         "club": "Sabah",
         "country": "AZE",
         "points": 14,
-        "trend": "DOWN",
+        "trend": "STABLE",
         "isSabah": true
       },
       {
@@ -1049,7 +1049,7 @@
         "club": "Neftchi",
         "country": "AZE",
         "points": 5.5,
-        "trend": "DOWN",
+        "trend": "STABLE",
         "isSabah": false
       },
       {

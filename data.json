@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T14:54:41.854Z",
+  "generatedAt": "2026-11-26T23:39:39.559Z",
   "source": {
     "matches": "https://match.uefa.com/v5/matches (official UEFA match feed)",
     "rules": "UEFA Champions League Regulations 2026/27, Annex D — Coefficient Ranking System",
@@ -956,14 +956,14 @@
     "note": "League phase in progress — match points banked so far."
   },
   "officialRanking": {
-    "position": 132,
+    "position": 137,
     "club": "Sabah",
     "country": "AZE",
     "points": 14,
-    "trend": "STABLE",
+    "trend": "DOWN",
     "isSabah": true,
     "ofTotal": 415,
-    "lastUpdated": "2026-11-25T21:55:03+0000",
+    "lastUpdated": "2026-11-26T21:57:45+0000",
     "matchesCounted": 5,
     "seasonBreakdown": [
       {
@@ -971,7 +971,7 @@
         "points": 8,
         "bonus": 6,
         "matches": 5,
-        "seasonPosition": 35
+        "seasonPosition": 40
       },
       {
         "season": 2026,
@@ -997,59 +997,59 @@
     ],
     "neighbours": [
       {
-        "position": 129,
-        "club": "Dynamo Kyiv",
-        "country": "UKR",
-        "points": 14.5,
-        "trend": "DOWN",
-        "isSabah": false
-      },
-      {
-        "position": 130,
-        "club": "Maccabi Haifa",
-        "country": "ISR",
-        "points": 14.5,
-        "trend": "DOWN",
-        "isSabah": false
-      },
-      {
-        "position": 131,
-        "club": "Víkingur R.",
-        "country": "ISL",
-        "points": 14.25,
-        "trend": "STABLE",
-        "isSabah": false
-      },
-      {
-        "position": 132,
-        "club": "Sabah",
-        "country": "AZE",
-        "points": 14,
-        "trend": "STABLE",
-        "isSabah": true
-      },
-      {
-        "position": 133,
-        "club": "Univ. Craiova",
-        "country": "ROU",
-        "points": 14,
-        "trend": "STABLE",
-        "isSabah": false
-      },
-      {
         "position": 134,
-        "club": "Torreense",
+        "club": "Santa Clara",
         "country": "POR",
-        "points": 13.95,
-        "trend": "STABLE",
+        "points": 14.03,
+        "trend": "UP",
         "isSabah": false
       },
       {
         "position": 135,
-        "club": "Santa Clara",
+        "club": "Arouca",
         "country": "POR",
-        "points": 13.95,
-        "trend": "STABLE",
+        "points": 14.03,
+        "trend": "UP",
+        "isSabah": false
+      },
+      {
+        "position": 136,
+        "club": "Gil Vicente",
+        "country": "POR",
+        "points": 14.03,
+        "trend": "UP",
+        "isSabah": false
+      },
+      {
+        "position": 137,
+        "club": "Sabah",
+        "country": "AZE",
+        "points": 14,
+        "trend": "DOWN",
+        "isSabah": true
+      },
+      {
+        "position": 138,
+        "club": "Univ. Craiova",
+        "country": "ROU",
+        "points": 14,
+        "trend": "DOWN",
+        "isSabah": false
+      },
+      {
+        "position": 139,
+        "club": "Borac",
+        "country": "BIH",
+        "points": 13.625,
+        "trend": "DOWN",
+        "isSabah": false
+      },
+      {
+        "position": 140,
+        "club": "Viking",
+        "country": "NOR",
+        "points": 13.5,
+        "trend": "DOWN",
         "isSabah": false
       }
     ],
@@ -1063,51 +1063,51 @@
         "isSabah": false
       },
       {
-        "position": 132,
+        "position": 137,
         "club": "Sabah",
         "country": "AZE",
         "points": 14,
-        "trend": "STABLE",
+        "trend": "DOWN",
         "isSabah": true
       },
       {
-        "position": 222,
+        "position": 225,
         "club": "Zire",
         "country": "AZE",
         "points": 7,
-        "trend": "STABLE",
+        "trend": "DOWN",
         "isSabah": false
       },
       {
-        "position": 269,
+        "position": 270,
         "club": "Neftchi",
         "country": "AZE",
         "points": 5.5,
-        "trend": "STABLE",
-        "isSabah": false
-      },
-      {
-        "position": 299,
-        "club": "Araz-Naxçıvan",
-        "country": "AZE",
-        "points": 4.837,
-        "trend": "STABLE",
+        "trend": "DOWN",
         "isSabah": false
       },
       {
         "position": 300,
-        "club": "Sumqayıt",
+        "club": "Araz-Naxçıvan",
         "country": "AZE",
         "points": 4.837,
-        "trend": "STABLE",
+        "trend": "DOWN",
         "isSabah": false
       },
       {
         "position": 301,
+        "club": "Sumqayıt",
+        "country": "AZE",
+        "points": 4.837,
+        "trend": "DOWN",
+        "isSabah": false
+      },
+      {
+        "position": 302,
         "club": "Gabala",
         "country": "AZE",
         "points": 4.837,
-        "trend": "STABLE",
+        "trend": "DOWN",
         "isSabah": false
       }
     ]
